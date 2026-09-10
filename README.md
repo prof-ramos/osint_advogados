@@ -32,8 +32,15 @@ Este repositório consolida o projeto de revisão e reconstrução integral do m
 ```
 osint_advogados/
 ├── README.md                                 # Apresentação executiva e índice geral do projeto
+├── CONTEXT.md                                # Modelo de domínio e vocabulário controlado estrito
+├── AGENTS.md                                 # Mapa de navegação minimalista para agentes de IA
+├── CODING_STANDARDS.md                       # Padrões de evidência forense e regras de revisão
 ├── plano_execucao_detalhado.md               # Plano de execução mestre consolidado
 ├── matriz_conversao_curso.md                 # Fase 12: Mapeamento direto Livro -> Curso/Aulas/Workshops
+│
+├── docs/adr/                                 # Decisões Arquiteturais (ADR-0001: Perene vs. Dinâmico)
+├── scripts/lint_evidencias.py                # Linter automatizado de higidez de evidências e SHA-256
+├── .agents/skills/                           # Habilidades e workflows de engenharia (Matt Pocock skills)
 │
 ├── relatorios_auditoria/                     # Fases 1, 2 e 3 (Ciclos 1 e 2)
 │   ├── 01_mapa_reaproveitamento.md           # Desmontagem crítica da ementa acadêmica de 72h
@@ -120,9 +127,36 @@ Todas as investigações documentadas nos capítulos e estudos de caso utilizam 
 
 ## 📦 Como Usar Este Repositório
 
-1. **Para Estudo e Redação de Peças**: Navegue pelos capítulos perenes em [`livro/`](file:///Users/gabrielramos/Developer/personal/osint_advogados/livro/) para fundamentação dogmática e doutrinária.
+1. **Para Estudo e Redação de Peças**: Navegue pelos capítulos perenes em [`livro/`](file:///Users/gabrielramos/Developer/personal/osint_advogados/livro/) para fundamentação dogmática e doutrinária (Capítulos 16, 17 e 18 já contêm precedentes comentados do STJ e parágrafos prontos para petição).
 2. **Para Consultas e Ferramentas Práticas**: Acesse a [`base_dinamica/`](file:///Users/gabrielramos/Developer/personal/osint_advogados/base_dinamica/) e o [`osint_brazuca_dataset/`](file:///Users/gabrielramos/Developer/personal/osint_advogados/osint_brazuca_dataset/) para identificar portais e parâmetros de busca por tipo de entrada (CPF, CNPJ, Placa, Matrícula, etc.).
 3. **Para Capacitação e Treinamento**: Utilize os roteiros de simulação em [`casos_praticos/`](file:///Users/gabrielramos/Developer/personal/osint_advogados/casos_praticos/) e a [`matriz_conversao_curso.md`](file:///Users/gabrielramos/Developer/personal/osint_advogados/matriz_conversao_curso.md).
+
+---
+
+## ⚡ Governança e Linter de Evidências
+
+O repositório conta com validação automatizada de integridade probatória e cadeia de custódia via [`scripts/lint_evidencias.py`](file:///Users/gabrielramos/Developer/personal/osint_advogados/scripts/lint_evidencias.py) e hook pre-commit:
+
+```bash
+# Validar matrizes de evidência nos casos práticos
+python3 scripts/lint_evidencias.py --path casos_praticos
+
+# Validar exemplos e matrizes nos capítulos do livro
+python3 scripts/lint_evidencias.py --path livro
+```
+
+---
+
+## 🗺️ Roadmap de Evolução e Próximos Passos
+
+O acompanhamento das próximas fases do projeto é gerenciado através das GitHub Issues abertas:
+
+- **[Issue #1](https://github.com/prof-ramos/osint_advogados/issues/1)**: `feat(livro)`: Aprofundamento jurisprudencial no Lote 2 da Parte 4 (Caps. 19, 20 e 21 - Família, Cibernético e Due Diligence).
+- **[Issue #2](https://github.com/prof-ramos/osint_advogados/issues/2)**: `feat(livro)`: Aprofundamento jurisprudencial no Lote 3 da Parte 4 (Cap. 22 - Medidas Judiciais, SNIPER e Provas).
+- **[Issue #3](https://github.com/prof-ramos/osint_advogados/issues/3)**: `ci`: Pipeline de GitHub Actions para validação contínua de evidências (`lint_evidencias.py`).
+- **[Issue #4](https://github.com/prof-ramos/osint_advogados/issues/4)**: `build(ebook)`: Pipeline de compilação editorial para PDF diagramado e EPUB.
+- **[Issue #5](https://github.com/prof-ramos/osint_advogados/issues/5)**: `docs(web)`: Portal web interativo de documentação com VitePress / MkDocs Material.
+- **[Issue #6](https://github.com/prof-ramos/osint_advogados/issues/6)**: `course`: Elaboração de roteiros de gravação e planos de aula baseados na matriz de 72h.
 
 ---
 
