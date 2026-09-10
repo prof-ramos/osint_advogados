@@ -24,6 +24,10 @@ FILE_EXT_PATTERN = re.compile(r"`[^`]+\.(pdf|png|jpe?g|mp4|html|warc|txt|json|cs
 
 
 def check_file(file_path: str) -> list[dict]:
+    # Arquivos normativos que documentam proibições e citam exemplos proibidos
+    if os.path.basename(file_path) in ("CODING_STANDARDS.md", "AGENTS.md"):
+        return []
+
     issues = []
     with open(file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
