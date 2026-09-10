@@ -22,6 +22,7 @@ Cada caso prático foi desenhado para simular fielmente a rotina de um escritór
 | **04** | **Perfil Anônimo em Rede Social** | Atribuição de identidade em perfis apócrifos e estruturação de medida judicial sob o art. 22 do Marco Civil. | [`caso_04_perfil_anonimo_redes.md`](file:///Users/gabrielramos/Developer/personal/osint_advogados/casos_praticos/caso_04_perfil_anonimo_redes.md) |
 | **05** | **Publicação Apagada em Rede** | Preservação pericial descentralizada (SingleFile, Archive.today e hash) e prova de confissão extrajudicial. | [`caso_05_publicacao_apagada_preservacao.md`](file:///Users/gabrielramos/Developer/personal/osint_advogados/casos_praticos/caso_05_publicacao_apagada_preservacao.md) |
 | **06** | **Due Diligence de Empresa Suspeita** | Auditoria societária preventiva para identificar "empresas noteiras", sócios de fachada e títulos públicos nulos. | [`caso_06_empresa_suspeita_societario.md`](file:///Users/gabrielramos/Developer/personal/osint_advogados/casos_praticos/caso_06_empresa_suspeita_societario.md) |
+| **07** | **Caso Integrado Multivetorial** | Desafio de inteligência a partir de apenas 3 seeds (*Nome + Telefone + Empresa*) e reconstrução de grupo econômico. | [`caso_07_caso_integrado_completo.md`](file:///Users/gabrielramos/Developer/personal/osint_advogados/casos_praticos/caso_07_caso_integrado_completo.md) |
 
 ---
 
