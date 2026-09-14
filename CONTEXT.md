@@ -51,3 +51,22 @@ _Avoid_: Investigação paralela clandestina, espionagem privada
 **Beneficiário Final**:
 A pessoa natural que, em última análise, possui, controla ou influencia significativamente uma entidade jurídica ou patrimônio sob custódia (IN RFB nº 2.119/2022).
 _Avoid_: Dono informal, patrão
+
+### Governança Probatória e Arquitetura
+
+**Cadeia de Custódia Probatória**:
+O conjunto de todos os procedimentos formais utilizados para manter e documentar a história cronológica do vestígio coletado em fontes digitais (art. 158-A do CPP).
+_Avoid_: Coleta informal, print solto, captura desregrada
+
+**Matriz de Evidências**:
+Tabela analítica estruturada de custódia que correlaciona cada ID probatório (`EVD-XXX`) ao seu registro temporal com fuso horário UTC-3, hash criptográfico SHA-256 e inferência lógica aplicável.
+_Avoid_: Anotação preliminar, relatório desestruturado
+
+**Base Dinâmica**:
+Repositório complementar de ferramentas, APIs, portais e scripts voláteis desacoplado do livro perene para prevenir a obsolescência técnica precoce da obra doutrinária (ADR-0001).
+_Avoid_: Livro estático desatualizado, catálogo misturado com doutrina
+
+**Compilação Editorial**:
+Pipeline automatizado de consolidação que valida e compila os 24 capítulos sequenciais nos formatos Markdown monólito, HTML estruturado para impressão e EPUB 3 com validação semântica.
+_Avoid_: Cópia manual, diagramação não reprodutível
+
