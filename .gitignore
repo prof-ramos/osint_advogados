@@ -13,3 +13,8 @@ agent/
 .agents/*
 !.agents/skills/
 
+# Build artifacts and distribution
+dist/
+site/
+
+
