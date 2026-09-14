@@ -1,0 +1,108 @@
+site_name: OSINT Aplicado ao Direito Brasileiro
+site_description: Manual prático, juridicamente rigoroso e tecnicamente operacional de inteligência em fontes abertas no Direito brasileiro.
+site_author: Prof. Gabriel Ramos
+repo_url: https://github.com/prof-ramos/osint_advogados
+repo_name: prof-ramos/osint_advogados
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    # Modo Claro
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    # Modo Escuro
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo claro
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+
+nav:
+  - Início: index.md
+  - O Manual (Livro):
+      - Apresentação Geral: livro/00_sumario_e_apresentacao.md
+      - Parte 1 - Fundamentos e Regime Jurídico:
+          - Cap. 01 - OSINT no Direito Brasileiro: livro/parte_1_fundamentos_e_regime_juridico/cap_01_investigacao_osint_direito_brasileiro.md
+          - Cap. 02 - Regime Jurídico (LGPD, LAI e MCI): livro/parte_1_fundamentos_e_regime_juridico/cap_02_regime_juridico_lgpd_lai_marco_civil.md
+          - Cap. 03 - Investigação Defensiva (Prov. 188): livro/parte_1_fundamentos_e_regime_juridico/cap_03_investigacao_defensiva_provimento_188.md
+          - Cap. 04 - Prova Digital e Cadeia de Custódia: livro/parte_1_fundamentos_e_regime_juridico/cap_04_prova_digital_cadeia_custodia_mesmidade.md
+      - Parte 2 - Metodologia e Evidências:
+          - Cap. 05 - O Ciclo Investigativo em 10 Etapas: livro/parte_2_metodologia_investigativa_e_evidencias/cap_05_ciclo_investigativo_10_etapas.md
+          - Cap. 06 - Separação Epistemológica: livro/parte_2_metodologia_investigativa_e_evidencias/cap_06_separacao_epistemologica_fato_inferencia_hipotese.md
+          - Cap. 07 - Sistema da Matriz de Evidências: livro/parte_2_metodologia_investigativa_e_evidencias/cap_07_sistema_matriz_evidencias_relatorio.md
+      - Parte 3 - Técnicas e Pivoteamento:
+          - Cap. 08 - Pesquisa Web Avançada e Dorking: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_08_pesquisa_web_avancada_dorking.md
+          - Cap. 09 - Identidade de Pessoas Naturais: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_09_investigacao_identidade_pessoas_naturais.md
+          - Cap. 10 - Investigação Societária (PJs): livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_10_investigacao_societaria_pessoas_juridicas.md
+          - Cap. 11 - Análise Documental e Metadados: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_11_analise_documental_metadados_arquivos.md
+          - Cap. 12 - Redes Sociais e Atribuição: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_12_redes_sociais_atribuicao_comportamento.md
+          - Cap. 13 - Imagens, Vídeos e Geolocalização: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_13_imagens_videos_geolocalizacao_satelite.md
+          - Cap. 14 - Web Histórica e Infraestrutura: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_14_web_historica_infraestrutura_digital.md
+          - Cap. 15 - Grafos e Análise de Vínculos: livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_15_analise_vinculos_grafos_relacoes.md
+      - Parte 4 - Aplicações Práticas:
+          - Cap. 16 - Localização de Devedores na Execução: livro/parte_4_aplicacoes_juridicas_praticas/cap_16_localizacao_devedores_execucao.md
+          - Cap. 17 - Rastreamento Patrimonial e Ativos: livro/parte_4_aplicacoes_juridicas_praticas/cap_17_investigacao_patrimonial_rastreamento_bens.md
+          - Cap. 18 - Fraude a Credores e Ocultação: livro/parte_4_aplicacoes_juridicas_praticas/cap_18_fraude_contra_credores_ocultacao_patrimonial.md
+          - Cap. 19 - Família e Execução de Alimentos: livro/parte_4_aplicacoes_juridicas_praticas/cap_19_direito_familia_execucao_alimentos.md
+          - Cap. 20 - Crimes Cibernéticos e Atribuição: livro/parte_4_aplicacoes_juridicas_praticas/cap_20_ilicitos_ciberneticos_atribuicao_redes.md
+          - Cap. 21 - Due Diligence e Compliance: livro/parte_4_aplicacoes_juridicas_praticas/cap_21_due_diligence_compliance_risco.md
+          - Cap. 22 - Medidas Judiciais e SNIPER: livro/parte_4_aplicacoes_juridicas_praticas/cap_22_quando_osint_e_insuficiente_medidas_judiciais.md
+      - Parte 5 - Casos e Exercícios:
+          - Cap. 23 - Estudos de Caso Guiados: livro/parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados.md
+          - Cap. 24 - Simulação em Contraditório: livro/parte_5_casos_praticos_e_caderno_exercicios/cap_24_laboratorio_integrado_simulacao_contraditorio.md
+  - Casos Práticos Forenses:
+      - Caso 01 - Localização de Devedor: casos_praticos/caso_01_devedor_nao_localizado.md
+      - Caso 02 - Insolvência e Blindagem: casos_praticos/caso_02_devedor_aparentemente_insolvente.md
+      - Caso 03 - Alimentos e Sinais de Riqueza: casos_praticos/caso_03_execucao_alimentos.md
+      - Caso 04 - Perfil Anônimo em Redes: casos_praticos/caso_04_perfil_anonimo_redes.md
+      - Caso 05 - Publicação Apagada: casos_praticos/caso_05_publicacao_apagada_preservacao.md
+      - Caso 06 - Empresa Suspeita / Noteira: casos_praticos/caso_06_empresa_suspeita_societario.md
+      - Caso 07 - Desafio Integrado Multivetorial: casos_praticos/caso_07_caso_integrado_completo.md
+  - Base Dinâmica:
+      - Catálogo de Portais e Ferramentas: base_dinamica/catalogo_ferramentas_portais.md
+      - Checklist Trimestral de Links: base_dinamica/checklist_verificacao_links.md
+  - Dataset OSINT Brazuca:
+      - Mapeamento de Fontes: osint_brazuca_dataset/mapeamento_fontes_brazuca.md
+      - Protocolo de Admissão: osint_brazuca_dataset/protocolo_validacao_fontes.md
+  - Curso de 72h:
+      - Banco de Questões Comentadas: curso/banco_questoes_e_jurisprudencia_osint.md
+  - Governança e ADRs:
+      - ADR-0001 - Livro Perene vs Base Dinâmica: adr/0001-separacao-ebook-perene-e-base-dinamica.md
