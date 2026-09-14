@@ -35,3 +35,6 @@ jobs:
 
       - name: Validar Integridade Forense no Livro
         run: python3 scripts/lint_evidencias.py --path livro
+
+      - name: Executar Suíte de Testes Automatizados
+        run: python3 -m unittest discover -s tests -v

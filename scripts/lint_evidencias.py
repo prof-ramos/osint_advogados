@@ -17,8 +17,8 @@ import sys
 
 EMPTY_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 EVD_ID_STRICT_PATTERN = re.compile(r"^EVD-\d{3}$")
-EVD_ID_ANY_PATTERN = re.compile(r"\bEVD-[\w-]+\b")
-HASH_SHA256_EXTRACT = re.compile(r"(?:SHA-256|Hash):\s*`?([a-zA-Z0-9._-]+)`?", re.IGNORECASE)
+EVD_ID_ANY_PATTERN = re.compile(r"\b(?:EVD|evd)-[\w-]+\b")
+HASH_SHA256_EXTRACT = re.compile(r"(?:SHA-256|Hash):\s*`?([a-zA-Z0-9._…-]+)`?", re.IGNORECASE)
 TIMEZONE_PATTERN = re.compile(r"(BRT|UTC(?:[+-]\d{1,2})?|GMT|Z|[+-]\d{2}:?\d{2})", re.IGNORECASE)
 FILE_EXT_PATTERN = re.compile(r"`[^`]+\.(pdf|png|jpe?g|mp4|html|warc|txt|json|csv|zip|eml|har|pcap|log)`", re.IGNORECASE)
 
