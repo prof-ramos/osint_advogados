@@ -1,0 +1,2693 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manual prático, juridicamente rigoroso e tecnicamente operacional de inteligência em fontes abertas no Direito brasileiro.">
+      
+      
+        <meta name="author" content="Prof. Gabriel Ramos">
+      
+      
+      
+        <link rel="prev" href="../caso_04_perfil_anonimo_redes/">
+      
+      
+        <link rel="next" href="../caso_06_empresa_suspeita_societario/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Caso 05 - Publicação Apagada - OSINT Aplicado ao Direito Brasileiro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estudo-de-caso-pratico-05-publicacao-posteriormente-apagada-e-cadeia-de-custodia" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-header__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Aplicado ao Direito Brasileiro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Caso 05 - Publicação Apagada
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../livro/00_sumario_e_apresentacao/" class="md-tabs__link">
+          
+  
+  
+  O Manual (Livro)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../caso_01_devedor_nao_localizado/" class="md-tabs__link">
+          
+  
+  
+  Casos Práticos Forenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../base_dinamica/catalogo_ferramentas_portais/" class="md-tabs__link">
+          
+  
+  
+  Base Dinâmica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-tabs__link">
+          
+  
+  
+  Dataset OSINT Brazuca
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-tabs__link">
+          
+  
+  
+  Curso de 72h
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-tabs__link">
+          
+  
+  
+  Governança e ADRs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-nav__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Aplicado ao Direito Brasileiro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O Manual (Livro)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    O Manual (Livro)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/00_sumario_e_apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_1_fundamentos_e_regime_juridico/cap_01_investigacao_osint_direito_brasileiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 01 - OSINT no Direito Brasileiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_1_fundamentos_e_regime_juridico/cap_02_regime_juridico_lgpd_lai_marco_civil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 02 - Regime Jurídico (LGPD, LAI e MCI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_1_fundamentos_e_regime_juridico/cap_03_investigacao_defensiva_provimento_188/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 03 - Investigação Defensiva (Prov. 188)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_1_fundamentos_e_regime_juridico/cap_04_prova_digital_cadeia_custodia_mesmidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 04 - Prova Digital e Cadeia de Custódia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_2_metodologia_investigativa_e_evidencias/cap_05_ciclo_investigativo_10_etapas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 05 - O Ciclo Investigativo em 10 Etapas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_2_metodologia_investigativa_e_evidencias/cap_06_separacao_epistemologica_fato_inferencia_hipotese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 06 - Separação Epistemológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_2_metodologia_investigativa_e_evidencias/cap_07_sistema_matriz_evidencias_relatorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 07 - Sistema da Matriz de Evidências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_08_pesquisa_web_avancada_dorking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 08 - Pesquisa Web Avançada e Dorking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_09_investigacao_identidade_pessoas_naturais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 09 - Identidade de Pessoas Naturais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_10_investigacao_societaria_pessoas_juridicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 10 - Investigação Societária (PJs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_11_analise_documental_metadados_arquivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 11 - Análise Documental e Metadados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_12_redes_sociais_atribuicao_comportamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 12 - Redes Sociais e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_13_imagens_videos_geolocalizacao_satelite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 13 - Imagens, Vídeos e Geolocalização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_14_web_historica_infraestrutura_digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 14 - Web Histórica e Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_3_tecnicas_operacionais_e_pivoteamento/cap_15_analise_vinculos_grafos_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 15 - Grafos e Análise de Vínculos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 4 - Aplicações Práticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 4 - Aplicações Práticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_16_localizacao_devedores_execucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 16 - Localização de Devedores na Execução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_17_investigacao_patrimonial_rastreamento_bens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 17 - Rastreamento Patrimonial e Ativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_18_fraude_contra_credores_ocultacao_patrimonial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 18 - Fraude a Credores e Ocultação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_19_direito_familia_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 19 - Família e Execução de Alimentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_20_ilicitos_ciberneticos_atribuicao_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 20 - Crimes Cibernéticos e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_21_due_diligence_compliance_risco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 21 - Due Diligence e Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_4_aplicacoes_juridicas_praticas/cap_22_quando_osint_e_insuficiente_medidas_judiciais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 22 - Medidas Judiciais e SNIPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 5 - Casos e Exercícios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 5 - Casos e Exercícios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 23 - Estudos de Caso Guiados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../livro/parte_5_casos_praticos_e_caderno_exercicios/cap_24_laboratorio_integrado_simulacao_contraditorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 24 - Simulação em Contraditório
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos Práticos Forenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos Práticos Forenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caso_01_devedor_nao_localizado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 01 - Localização de Devedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caso_02_devedor_aparentemente_insolvente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 02 - Insolvência e Blindagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caso_03_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 03 - Alimentos e Sinais de Riqueza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caso_04_perfil_anonimo_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 04 - Perfil Anônimo em Redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 05 - Publicação Apagada
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 05 - Publicação Apagada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-cenario-fatico-e-mandato-investigativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cenário Fático e Mandato Investigativo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ponto-de-partida-e-identificadores-iniciais-seeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ponto de Partida e Identificadores Iniciais (Seeds)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cadeia-de-preservacao-e-rastreamento-de-web-historica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cadeia de Preservação e Rastreamento de Web Histórica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-diario-de-buscas-e-procedimentos-periciais-de-preservacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Diário de Buscas e Procedimentos Periciais de Preservação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-matriz-de-evidencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Matriz de Evidências
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-de-aprendizagem-aplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes de Aprendizagem Aplicados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes de Aprendizagem Aplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preservacao-o-tripe-da-evidencia-web-descentralizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Preservação: O Tripé da Evidência Web Descentralizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-impugnacao-de-print-e-a-pericia-tecnica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: Impugnação de Print e a Perícia Técnica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-desfecho-juridico-e-aplicacao-pratica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Desfecho Jurídico e Aplicação Prática
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caso_06_empresa_suspeita_societario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 06 - Empresa Suspeita / Noteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caso_07_caso_integrado_completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 07 - Desafio Integrado Multivetorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Base Dinâmica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base_dinamica/catalogo_ferramentas_portais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Portais e Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base_dinamica/checklist_verificacao_links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist Trimestral de Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset OSINT Brazuca
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dataset OSINT Brazuca
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento de Fontes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osint_brazuca_dataset/protocolo_validacao_fontes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo de Admissão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso de 72h
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso de 72h
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Banco de Questões Comentadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governança e ADRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governança e ADRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001 - Livro Perene vs Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-cenario-fatico-e-mandato-investigativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cenário Fático e Mandato Investigativo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ponto-de-partida-e-identificadores-iniciais-seeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ponto de Partida e Identificadores Iniciais (Seeds)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cadeia-de-preservacao-e-rastreamento-de-web-historica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cadeia de Preservação e Rastreamento de Web Histórica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-diario-de-buscas-e-procedimentos-periciais-de-preservacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Diário de Buscas e Procedimentos Periciais de Preservação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-matriz-de-evidencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Matriz de Evidências
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-de-aprendizagem-aplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes de Aprendizagem Aplicados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes de Aprendizagem Aplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preservacao-o-tripe-da-evidencia-web-descentralizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Preservação: O Tripé da Evidência Web Descentralizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-impugnacao-de-print-e-a-pericia-tecnica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: Impugnação de Print e a Perícia Técnica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-desfecho-juridico-e-aplicacao-pratica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Desfecho Jurídico e Aplicação Prática
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="estudo-de-caso-pratico-05-publicacao-posteriormente-apagada-e-cadeia-de-custodia">Estudo de Caso Prático 05: Publicação Posteriormente Apagada e Cadeia de Custódia<a class="headerlink" href="#estudo-de-caso-pratico-05-publicacao-posteriormente-apagada-e-cadeia-de-custodia" title="Permanent link">&para;</a></h1>
+<h2 id="1-cenario-fatico-e-mandato-investigativo">1. Cenário Fático e Mandato Investigativo<a class="headerlink" href="#1-cenario-fatico-e-mandato-investigativo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Cliente</strong>: Cooperativa Agrícola Verde Vale.</li>
+<li><strong>Caso</strong>: Ação Trabalhista com Pedido de Indenização por Assédio Moral Coletivo e Danos Extrapatrimoniais (Proc. nº 0001890-72.2025.5.12.0035 - Vara do Trabalho de Chapecó/SC).</li>
+<li><strong>Alvo</strong>: Agroindústria e Frigorífico Boi Gordo S/A.</li>
+<li><strong>Problema Jurídico</strong>: O diretor industrial da reclamada publicou em seu perfil corporativo no LinkedIn um texto comemorando o "recorde de produtividade", no qual confessava explicitamente que os operadores de abate haviam trabalhado durante 18 horas ininterruptas em câmara fria sem pausas térmicas. Ao ser alertado pelo setor jurídico interno sobre a confissão de infração às NRs e jornada exaustiva, o executivo apagou a postagem 4 horas após a publicação. A empresa nega categoricamente em juízo a existência do fato e acusa o reclamante de "fabricar prints falsos".</li>
+<li><strong>Pergunta Investigativa</strong>: <em>Como comprovar a higidez, integridade, temporalidade e autoria da postagem excluída, superando a tese de manipulação digital e falsidade documental arguida pela reclamada?</em></li>
+<li><strong>Base Legal</strong>: Arts. 369, 422 e 424 do CPC (subsidiários à CLT); Arts. 158-A e seguintes do CPP (princípios da cadeia de custódia).</li>
+</ul>
+<hr />
+<h2 id="2-ponto-de-partida-e-identificadores-iniciais-seeds">2. Ponto de Partida e Identificadores Iniciais (<em>Seeds</em>)<a class="headerlink" href="#2-ponto-de-partida-e-identificadores-iniciais-seeds" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>URL Original da Postagem (excluída)</strong>: <code>https://www.linkedin.com/posts/gustavo-silva-agro_produtividade-recorde-frigorifico-activity-7192837465019283746-aB1c</code>.</li>
+<li><strong>Nome do Autor da Postagem</strong>: Gustavo Henrique da Silva (Diretor Operacional).</li>
+<li><strong>Momento da Publicação Original</strong>: 14 de maio de 2025, aproximadamente às 18h30.</li>
+<li><strong>Momento da Exclusão</strong>: 14 de maio de 2025, às 22h40.</li>
+</ul>
+<hr />
+<h2 id="3-cadeia-de-preservacao-e-rastreamento-de-web-historica">3. Cadeia de Preservação e Rastreamento de Web Histórica<a class="headerlink" href="#3-cadeia-de-preservacao-e-rastreamento-de-web-historica" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Publicação Visualizada pelo Reclamante às 19h15]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>       │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>       ▼ (Procedimento Preventivo Imediato pelo Advogado)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[Captura Técnica Completa via SingleFile: HTML + Base64 + CSS em Arquivo Único]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>       │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       ▼ (Submissão Concomitante a Serviços Públicos de Arquivamento Web)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[Submissão aos motores do Wayback Machine (Archive.org) e Archive.today (Archive.ph)]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>       │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>       ▼ (Extração de Cabeçalhos de Rede / Console do Navegador)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[Gravação de arquivo HAR (HTTP Archive) registrando status 200 OK do LinkedIn e IP do CDN]
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>       │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>       ▼ (Cálculo Imediato de Hash Criptográfico)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[Geração de SHA-256 sobre o arquivo .html, .har e captura de tela PNG em alta resolução]
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>       │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>       ▼ (Acontecendo a Exclusão do Post às 22h40)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>[Tentativa de acesso à URL original retorna Erro 404 / "Publicação indisponível"]
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>       │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>       ▼ (Confronto de Fontes Históricas)
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>[O snapshot no Archive.today permanece imutável e com carimbo de tempo do servidor externo]
+</code></pre></div>
+<hr />
+<h2 id="4-diario-de-buscas-e-procedimentos-periciais-de-preservacao">4. Diário de Buscas e Procedimentos Periciais de Preservação<a class="headerlink" href="#4-diario-de-buscas-e-procedimentos-periciais-de-preservacao" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Data/Hora (UTC-3)</th>
+<th style="text-align: left;">Procedimento Técnico Executado</th>
+<th style="text-align: left;">Ferramenta Utilizada</th>
+<th style="text-align: left;">Arquivo Gerado / Hash SHA-256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">14/05/2025 19:22</td>
+<td style="text-align: left;">Captura do código-fonte completo e elementos gráficos integrados.</td>
+<td style="text-align: left;">Extensão SingleFile (Chromium).</td>
+<td style="text-align: left;"><code>linkedin_post_gustavo_silva_20250514.html</code><br><code>Hash: 10b9798bae81cb179b9cbf2237a77e10996d3911bd669247e4b934410c7bdac0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">14/05/2025 19:24</td>
+<td style="text-align: left;">Gravação de tráfego de rede e resposta do servidor remoto da Microsoft/LinkedIn.</td>
+<td style="text-align: left;">DevTools do Navegador (Network Export HAR).</td>
+<td style="text-align: left;"><code>linkedin_network_traffic_20250514.har</code><br><code>Hash: ec67bac0cdcd2ace70b73c72c68f168853a3a1bff23bae2af42f16bce843b576</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">14/05/2025 19:28</td>
+<td style="text-align: left;">Requisição de arquivamento no Archive.today.</td>
+<td style="text-align: left;">API / Web Form do Archive.ph</td>
+<td style="text-align: left;">Snapshot permanente gravado na URL: <code>https://archive.ph/2025.05.14-222815/https://www.linkedin.com/posts/...</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">14/05/2025 19:35</td>
+<td style="text-align: left;">Registro de carimbo de tempo com protocolo de auditoria.</td>
+<td style="text-align: left;">Plataforma de Registro Criptográfico com Carimbo ICP-Brasil.</td>
+<td style="text-align: left;">Certificado Técnico de Preservação nº 2025-BR-9912.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-matriz-de-evidencias">5. Matriz de Evidências<a class="headerlink" href="#5-matriz-de-evidencias" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Fato Investigado</th>
+<th style="text-align: left;">Informação Encontrada</th>
+<th style="text-align: left;">Fonte</th>
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Confiabilidade</th>
+<th style="text-align: left;">Corroboração</th>
+<th style="text-align: left;">Limitação</th>
+<th style="text-align: left;">Classificação</th>
+<th style="text-align: left;">Preservação</th>
+<th style="text-align: left;">Utilidade Jurídica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>EVD-009</strong></td>
+<td style="text-align: left;">Confissão de jornada de trabalho abusiva e sem pausas térmicas.</td>
+<td style="text-align: left;">Texto expresso do diretor: <em>"Nossa equipe de abate bateu 18h seguidas de operação hoje sem parar as esteiras da câmara fria"</em>.</td>
+<td style="text-align: left;">LinkedIn (Perfil oficial de Gustavo Henrique da Silva).</td>
+<td style="text-align: left;">14/05/2025 19:22 BRT</td>
+<td style="text-align: left;">Primária</td>
+<td style="text-align: left;">Alta (Confissão extrajudicial - art. 389 CPC)</td>
+<td style="text-align: left;">Corroborado por relatórios de pesagem de carga e cartões de ponto que atestam ausência de marcação.</td>
+<td style="text-align: left;">O post foi excluído posteriormente pelo autor da página.</td>
+<td style="text-align: left;">Fato Verificado (Materialidade e autoria da manifestação).</td>
+<td style="text-align: left;">Arquivo <code>linkedin_post_gustavo_silva_20250514.html</code> (Hash SHA-256: <code>10b9798bae81cb179b9cbf2237a77e10996d3911bd669247e4b934410c7bdac0</code>).</td>
+<td style="text-align: left;">Instruir inicial trabalhista como confissão real da reclamada (art. 391 do CPC).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EVD-010</strong></td>
+<td style="text-align: left;">Conduta intencional de supressão probatória (<em>spoliation of evidence</em>).</td>
+<td style="text-align: left;">Exclusão do conteúdo poucas horas após repercussão negativa interna.</td>
+<td style="text-align: left;">Comparação entre o snapshot das 19h28 e a resposta HTTP 404 das 22h50.</td>
+<td style="text-align: left;">14/05/2025 22:50 BRT</td>
+<td style="text-align: left;">Técnica</td>
+<td style="text-align: left;">Alta</td>
+<td style="text-align: left;">Corroborado pelos logs de indisponibilidade da URL.</td>
+<td style="text-align: left;">O LinkedIn não informa publicamente o motivo da exclusão (se pelo usuário ou denúncia).</td>
+<td style="text-align: left;">Fato Verificado (Supressão do conteúdo da rede).</td>
+<td style="text-align: left;">Arquivo <code>linkedin_network_traffic_20250514.har</code> (Hash SHA-256: <code>ec67bac0cdcd2ace70b73c72c68f168853a3a1bff23bae2af42f16bce843b576</code>).</td>
+<td style="text-align: left;">Pedir aplicação de presunção de veracidade dos fatos articulados pela parte adversa (CPC, art. 400).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-boxes-de-aprendizagem-aplicados">6. Boxes de Aprendizagem Aplicados<a class="headerlink" href="#6-boxes-de-aprendizagem-aplicados" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]</p>
+<h3 id="preservacao-o-tripe-da-evidencia-web-descentralizada">📦 Preservação: O Tripé da Evidência Web Descentralizada<a class="headerlink" href="#preservacao-o-tripe-da-evidencia-web-descentralizada" title="Permanent link">&para;</a></h3>
+<p>Jamais confie exclusivamente no disco rígido do seu computador. Uma evidência digital web é considerada robusta pelo Judiciário quando apoiada em um <strong>tripé de redundância</strong>:
+1. <strong>Cópia Local com Hash</strong>: O arquivo HTML bruto salvo localmente, com hash calculado na hora;
+2. <strong>Espelho em Terceiro Confiável</strong>: A preservação automática em repositórios neutros e imutáveis públicos (Wayback Machine / Archive.today);
+3. <strong>Rastreabilidade de Tráfego</strong>: Os metadados de requisição HTTP (arquivo HAR) comprovando o IP do servidor de origem e a ausência de manipulação local.</p>
+<p>[!WARNING]</p>
+<h3 id="limite-juridico-impugnacao-de-print-e-a-pericia-tecnica">⚖️ Limite Jurídico: Impugnação de Print e a Perícia Técnica<a class="headerlink" href="#limite-juridico-impugnacao-de-print-e-a-pericia-tecnica" title="Permanent link">&para;</a></h3>
+<p>Se a parte contrária impugnar a veracidade do conteúdo alegando montagem (CPC, art. 428, I), a mera juntada de imagem PNG ou JPEG será considerada imprestável pelo juiz. Porém, a apresentação do arquivo HTML original com os hashes conferíveis em audiência transfere para a parte que arguiu a falsidade o ônus de provar a adulteração (CPC, art. 429, I).</p>
+</blockquote>
+<hr />
+<h2 id="7-desfecho-juridico-e-aplicacao-pratica">7. Desfecho Jurídico e Aplicação Prática<a class="headerlink" href="#7-desfecho-juridico-e-aplicacao-pratica" title="Permanent link">&para;</a></h2>
+<p>Na audiência de instrução na Vara do Trabalho de Chapecó, a reclamada sustentou formalmente a falsidade da prova, afirmando que a imagem juntada na petição era uma "montagem grotesca feita em Photoshop".</p>
+<p>O advogado do reclamante, contudo, peticionou disponibilizando em juízo:
+1. O arquivo digital original <code>linkedin_post_gustavo_silva_20250514.html</code> em mídia física lacrada;
+2. A conferência do código hash SHA-256 diretamente no terminal do tribunal perante o juiz;
+3. O link público e auditável do Archive.today gerado na data do fato;
+4. O requerimento de aplicação das penalidades de litigância de má-fé caso a empresa persistisse na falsa arguição de falsidade.</p>
+<p>Diante da higidez técnica incontestável da cadeia de custódia, o magistrado rejeitou a impugnação da reclamada, considerou a manifestação como <strong>confissão extrajudicial espontânea</strong> da empregadora e condenou a empresa ao pagamento de horas extras, adicional de insalubridade e indenização por assédio moral coletivo no valor de R$ 500.000,00.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

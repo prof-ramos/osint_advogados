@@ -1,0 +1,2835 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manual prático, juridicamente rigoroso e tecnicamente operacional de inteligência em fontes abertas no Direito brasileiro.">
+      
+      
+        <meta name="author" content="Prof. Gabriel Ramos">
+      
+      
+      
+        <link rel="prev" href="../cap_17_investigacao_patrimonial_rastreamento_bens/">
+      
+      
+        <link rel="next" href="../cap_19_direito_familia_execucao_alimentos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap. 18 - Fraude a Credores e Ocultação - OSINT Aplicado ao Direito Brasileiro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-18-desvendando-a-ocultacao-patrimonial-laranjas-grupos-de-fachada-e-sucessao-fraudulenta" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-header__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Aplicado ao Direito Brasileiro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap. 18 - Fraude a Credores e Ocultação
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../00_sumario_e_apresentacao/" class="md-tabs__link">
+          
+  
+  
+  O Manual (Livro)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-tabs__link">
+          
+  
+  
+  Casos Práticos Forenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-tabs__link">
+          
+  
+  
+  Base Dinâmica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-tabs__link">
+          
+  
+  
+  Dataset OSINT Brazuca
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-tabs__link">
+          
+  
+  
+  Curso de 72h
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-tabs__link">
+          
+  
+  
+  Governança e ADRs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-nav__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Aplicado ao Direito Brasileiro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O Manual (Livro)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    O Manual (Livro)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_sumario_e_apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_01_investigacao_osint_direito_brasileiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 01 - OSINT no Direito Brasileiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_02_regime_juridico_lgpd_lai_marco_civil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 02 - Regime Jurídico (LGPD, LAI e MCI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_03_investigacao_defensiva_provimento_188/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 03 - Investigação Defensiva (Prov. 188)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_04_prova_digital_cadeia_custodia_mesmidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 04 - Prova Digital e Cadeia de Custódia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_05_ciclo_investigativo_10_etapas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 05 - O Ciclo Investigativo em 10 Etapas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_06_separacao_epistemologica_fato_inferencia_hipotese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 06 - Separação Epistemológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_07_sistema_matriz_evidencias_relatorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 07 - Sistema da Matriz de Evidências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_08_pesquisa_web_avancada_dorking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 08 - Pesquisa Web Avançada e Dorking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_09_investigacao_identidade_pessoas_naturais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 09 - Identidade de Pessoas Naturais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_10_investigacao_societaria_pessoas_juridicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 10 - Investigação Societária (PJs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_11_analise_documental_metadados_arquivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 11 - Análise Documental e Metadados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_12_redes_sociais_atribuicao_comportamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 12 - Redes Sociais e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_13_imagens_videos_geolocalizacao_satelite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 13 - Imagens, Vídeos e Geolocalização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_14_web_historica_infraestrutura_digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 14 - Web Histórica e Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_15_analise_vinculos_grafos_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 15 - Grafos e Análise de Vínculos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 4 - Aplicações Práticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 4 - Aplicações Práticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_16_localizacao_devedores_execucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 16 - Localização de Devedores na Execução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_17_investigacao_patrimonial_rastreamento_bens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 17 - Rastreamento Patrimonial e Ativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 18 - Fraude a Credores e Ocultação
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 18 - Fraude a Credores e Ocultação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-fronteira-juridica-entre-planejamento-patrimonial-licito-e-fraude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. A Fronteira Jurídica entre Planejamento Patrimonial Lícito e Fraude
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fraude-contra-credores-vs-fraude-a-execucao-distincoes-dogmaticas-e-consequencias-processuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fraude Contra Credores vs. Fraude à Execução: Distinções Dogmáticas e Consequências Processuais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Fraude Contra Credores vs. Fraude à Execução: Distinções Dogmáticas e Consequências Processuais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-o-principio-da-ineficacia-relativa-na-fraude-a-execucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. O Princípio da Ineficácia Relativa na Fraude à Execução
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-sumula-375-do-stj-e-o-tema-repetitivo-243-a-prova-da-ma-fe-via-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A Súmula 375 do STJ e o Tema Repetitivo 243: A Prova da Má-Fé via OSINT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-as-quatro-tipologias-classicas-de-ocultacao-patrimonial-no-brasil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. As Quatro Tipologias Clássicas de Ocultação Patrimonial no Brasil
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. As Quatro Tipologias Clássicas de Ocultação Patrimonial no Brasil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-doacao-com-reserva-de-usufruto-para-herdeiros-e-fraude-objetiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Doação com Reserva de Usufruto para Herdeiros e Fraude Objetiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-divorcio-simulado-com-partilha-fraudulenta-de-bens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Divórcio Simulado com Partilha Fraudulenta de Bens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-interposicao-fraudulenta-de-pessoas-fisicas-laranjas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Interposição Fraudulenta de Pessoas Físicas ("Laranjas")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-sucessao-empresarial-fraudulenta-de-fato-e-confusao-operacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Sucessão Empresarial Fraudulenta de Fato e Confusão Operacional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-incidente-de-desconsideracao-da-personalidade-juridica-idpj-o-art-50-do-codigo-civil-apos-a-lei-138742019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Incidente de Desconsideração da Personalidade Jurídica (IDPJ): O Art. 50 do Código Civil após a Lei 13.874/2019
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-fraude-a-execucao-e-sumula-375-do-stj-tema-repetitivo-243" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Fraude à Execução e Súmula 375 do STJ (Tema Repetitivo 243)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-desconsideracao-da-personalidade-juridica-e-lei-138742019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Desconsideração da Personalidade Jurídica e Lei 13.874/2019
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinal-de-atencao-a-constituicao-da-holding-no-trimestre-da-sentenca-condenatoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚩 Sinal de Atenção: A Constituição da Holding no Trimestre da Sentença Condenatória
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nao-conclua-ainda-doacao-licita-em-vida-vs-doacao-em-fraude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Não Conclua Ainda: Doação Lícita em Vida vs. Doação em Fraude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onde-osint-para-e-entra-a-medida-judicial-quebra-de-sigilo-bancario-e-fiscal-via-sisbajud-sniper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛑 Onde OSINT Para e Entra a Medida Judicial: Quebra de Sigilo Bancário e Fiscal via SISBAJUD / SNIPER
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_19_direito_familia_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 19 - Família e Execução de Alimentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_20_ilicitos_ciberneticos_atribuicao_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 20 - Crimes Cibernéticos e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_21_due_diligence_compliance_risco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 21 - Due Diligence e Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_22_quando_osint_e_insuficiente_medidas_judiciais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 22 - Medidas Judiciais e SNIPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 5 - Casos e Exercícios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 5 - Casos e Exercícios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 23 - Estudos de Caso Guiados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_24_laboratorio_integrado_simulacao_contraditorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 24 - Simulação em Contraditório
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos Práticos Forenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos Práticos Forenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 01 - Localização de Devedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_02_devedor_aparentemente_insolvente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 02 - Insolvência e Blindagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_03_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 03 - Alimentos e Sinais de Riqueza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_04_perfil_anonimo_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 04 - Perfil Anônimo em Redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_05_publicacao_apagada_preservacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 05 - Publicação Apagada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_06_empresa_suspeita_societario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 06 - Empresa Suspeita / Noteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_07_caso_integrado_completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 07 - Desafio Integrado Multivetorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Base Dinâmica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Portais e Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/checklist_verificacao_links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist Trimestral de Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset OSINT Brazuca
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dataset OSINT Brazuca
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento de Fontes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/protocolo_validacao_fontes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo de Admissão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso de 72h
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso de 72h
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Banco de Questões Comentadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governança e ADRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governança e ADRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001 - Livro Perene vs Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-fronteira-juridica-entre-planejamento-patrimonial-licito-e-fraude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. A Fronteira Jurídica entre Planejamento Patrimonial Lícito e Fraude
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fraude-contra-credores-vs-fraude-a-execucao-distincoes-dogmaticas-e-consequencias-processuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fraude Contra Credores vs. Fraude à Execução: Distinções Dogmáticas e Consequências Processuais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Fraude Contra Credores vs. Fraude à Execução: Distinções Dogmáticas e Consequências Processuais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-o-principio-da-ineficacia-relativa-na-fraude-a-execucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. O Princípio da Ineficácia Relativa na Fraude à Execução
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-sumula-375-do-stj-e-o-tema-repetitivo-243-a-prova-da-ma-fe-via-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A Súmula 375 do STJ e o Tema Repetitivo 243: A Prova da Má-Fé via OSINT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-as-quatro-tipologias-classicas-de-ocultacao-patrimonial-no-brasil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. As Quatro Tipologias Clássicas de Ocultação Patrimonial no Brasil
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. As Quatro Tipologias Clássicas de Ocultação Patrimonial no Brasil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-doacao-com-reserva-de-usufruto-para-herdeiros-e-fraude-objetiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Doação com Reserva de Usufruto para Herdeiros e Fraude Objetiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-divorcio-simulado-com-partilha-fraudulenta-de-bens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Divórcio Simulado com Partilha Fraudulenta de Bens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-interposicao-fraudulenta-de-pessoas-fisicas-laranjas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Interposição Fraudulenta de Pessoas Físicas ("Laranjas")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-sucessao-empresarial-fraudulenta-de-fato-e-confusao-operacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Sucessão Empresarial Fraudulenta de Fato e Confusão Operacional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-incidente-de-desconsideracao-da-personalidade-juridica-idpj-o-art-50-do-codigo-civil-apos-a-lei-138742019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Incidente de Desconsideração da Personalidade Jurídica (IDPJ): O Art. 50 do Código Civil após a Lei 13.874/2019
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-fraude-a-execucao-e-sumula-375-do-stj-tema-repetitivo-243" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Fraude à Execução e Súmula 375 do STJ (Tema Repetitivo 243)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-desconsideracao-da-personalidade-juridica-e-lei-138742019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Desconsideração da Personalidade Jurídica e Lei 13.874/2019
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinal-de-atencao-a-constituicao-da-holding-no-trimestre-da-sentenca-condenatoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚩 Sinal de Atenção: A Constituição da Holding no Trimestre da Sentença Condenatória
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nao-conclua-ainda-doacao-licita-em-vida-vs-doacao-em-fraude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Não Conclua Ainda: Doação Lícita em Vida vs. Doação em Fraude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onde-osint-para-e-entra-a-medida-judicial-quebra-de-sigilo-bancario-e-fiscal-via-sisbajud-sniper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛑 Onde OSINT Para e Entra a Medida Judicial: Quebra de Sigilo Bancário e Fiscal via SISBAJUD / SNIPER
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="capitulo-18-desvendando-a-ocultacao-patrimonial-laranjas-grupos-de-fachada-e-sucessao-fraudulenta">Capítulo 18: Desvendando a Ocultação Patrimonial: Laranjas, Grupos de Fachada e Sucessão Fraudulenta<a class="headerlink" href="#capitulo-18-desvendando-a-ocultacao-patrimonial-laranjas-grupos-de-fachada-e-sucessao-fraudulenta" title="Permanent link">&para;</a></h1>
+<h2 id="1-a-fronteira-juridica-entre-planejamento-patrimonial-licito-e-fraude">1. A Fronteira Jurídica entre Planejamento Patrimonial Lícito e Fraude<a class="headerlink" href="#1-a-fronteira-juridica-entre-planejamento-patrimonial-licito-e-fraude" title="Permanent link">&para;</a></h2>
+<p>O planejamento patrimonial, tributário e sucessório é uma prática jurídica plenamente legítima, amparada pela ordem constitucional da livre iniciativa (CF, art. 170) e pela liberdade contratual e de estruturação corporativa (Lei nº 13.874/2019 - Declaração de Direitos de Liberdade Econômica). Famílias e grupos empresariais dispõem da faculdade de organizar seus ativos imobiliários e societários em sociedades <em>holding</em>, disciplinar a governança através de acordos de sócios e realizar doações com adiantamento de legítima, com o propósito de mitigar custos fiscais e prevenir disputas sucessórias.</p>
+<p>Contudo, a fronteira entre a estruturação preventiva lícita e a <strong>ocultação patrimonial fraudulenta</strong> é demarcada por um critério temporal, teleológico e fático inequívoco: <strong>a preexistência de obrigações inadimplidas ou litígios em curso e a redução intencional do devedor ao estado de insolvência real ou aparente</strong>.</p>
+<p>Quando atos de alienação, doação, integralização ou reorganização societária são praticados com o desígnio de esvaziar a garantia genérica dos credores e frustrar a satisfação forçada do crédito, o ordenamento jurídico sanciona a conduta com a nulidade do ato ou a sua <strong>ineficácia relativa perante o credor exequente</strong> (Código Civil, arts. 158 a 165, e Código de Processo Civil, arts. 790, 792 e 831).</p>
+<hr />
+<h2 id="2-fraude-contra-credores-vs-fraude-a-execucao-distincoes-dogmaticas-e-consequencias-processuais">2. Fraude Contra Credores vs. Fraude à Execução: Distinções Dogmáticas e Consequências Processuais<a class="headerlink" href="#2-fraude-contra-credores-vs-fraude-a-execucao-distincoes-dogmaticas-e-consequencias-processuais" title="Permanent link">&para;</a></h2>
+<p>A correta identificação da espécie de fraude delimita o remédio processual cabível e o respectivo ônus probatório:</p>
+<pre class="mermaid"><code>flowchart TD
+    subgraph Fraude_Contra_Credores [Fraude Contra Credores - CC, Arts. 158 a 165]
+        A1[Dívida Exigível Preexistente] --&gt; B1[Alienação de Bens Ocorrida ANTES da Demanda Judicial]
+        B1 --&gt; C1[Exigência de Ação Anulatória Autônoma: Ação Pauliana]
+        C1 --&gt; D1[Necessidade de Provar o Consilium Fraudis conluio e o Eventus Damni insolvência]
+        D1 --&gt; E1[Sentença Desconstitutiva Anula o Negócio Jurídico]
+    end
+
+    subgraph Fraude_a_Execucao [Fraude à Execução - CPC, Art. 792]
+        A2[Ação Condenatória ou Execução em Curso] --&gt; B2[Alienação de Bens APÓS Citação Válida ou Averbação Premonitória]
+        B2 --&gt; C2[Requerimento por Mera Petição nos Próprios Autos da Execução]
+        C2 --&gt; D2[Aplicação da Súmula 375 do STJ e Tema Repetitivo 243]
+        D2 --&gt; E2[Decisão Interlocutória Declara a Ineficácia Relativa do Negócio]
+    end</code></pre>
+<h3 id="21-o-principio-da-ineficacia-relativa-na-fraude-a-execucao">2.1. O Princípio da Ineficácia Relativa na Fraude à Execução<a class="headerlink" href="#21-o-principio-da-ineficacia-relativa-na-fraude-a-execucao" title="Permanent link">&para;</a></h3>
+<p>Enquanto a fraude contra credores atenta primariamente contra o interesse privado do credor (gerando a anulação do ato via Ação Pauliana), a <strong>fraude à execução atenta contra a própria dignidade da jurisdição e a autoridade do Poder Judiciário</strong> (art. 774, I, do CPC). Por essa razão, a alienação operada em fraude à execução é válida entre os contratantes, mas é <strong>absolutamente ineficaz perante o credor exequente</strong>, permitindo que o oficial de justiça penhore o bem diretamente em mãos do terceiro adquirente, como se a alienação jamais houvesse ocorrido.</p>
+<hr />
+<h2 id="3-a-sumula-375-do-stj-e-o-tema-repetitivo-243-a-prova-da-ma-fe-via-osint">3. A Súmula 375 do STJ e o Tema Repetitivo 243: A Prova da Má-Fé via OSINT<a class="headerlink" href="#3-a-sumula-375-do-stj-e-o-tema-repetitivo-243-a-prova-da-ma-fe-via-osint" title="Permanent link">&para;</a></h2>
+<p>Durante anos, discutiu-se nos tribunais pátrios se a caracterização da fraude à execução exigiria ou não a comprovação de que o terceiro adquirente tinha ciência da existência do processo contra o alienante.</p>
+<p>A matéria foi pacificada pela Corte Especial do Superior Tribunal de Justiça mediante a edição da <strong>Súmula 375</strong>:</p>
+<blockquote>
+<p><em>"O reconhecimento da fraude à execução depende do registro da penhora do bem alienado ou da prova de má-fé do terceiro adquirente."</em></p>
+</blockquote>
+<p>Ao julgar o <strong>Tema Repetitivo 243</strong> (REsp 956.943/PR, Rel. p/ acórdão Min. João Otávio de Noronha), o STJ firmou duas diretrizes estruturantes:
+1. <strong>Presunção Absoluta de Fraude</strong>: Se o credor providenciou a averbação premonitória da execução na matrícula do imóvel (CPC, art. 828) ou o registro formal da penhora (CPC, art. 844), milita em seu favor a presunção absoluta de fraude, tornando irrelevante qualquer discussão sobre a boa ou má-fé do adquirente;
+2. <strong>Ônus Probatório da Má-Fé</strong>: Na ausência de registro da penhora ou averbação premonitória, <strong>o ônus de provar a má-fé do terceiro adquirente recai integralmente sobre o credor exequente</strong>.</p>
+<p>É exatamente no cumprimento desse encargo probatório que as técnicas de inteligência em fontes abertas (OSINT) revelam sua máxima potência prática. O credor não precisa de confissão formal do adquirente; o STJ admite expressamente a <strong>prova indiciária consistente e concatenada de má-fé</strong>, a qual é produzida via OSINT através de quatro vetores:
+- <strong>Demonstração de Vínculo de Parentesco Oculto</strong>: Cruzamento genealógico em redes sociais, inventários e obituários provando que o adquirente é cunhado, genro, sobrinho ou companheiro em união estável não formalizada do devedor;
+- <strong>Demonstração de Relação Societária ou Empregatícia</strong>: Comprovação de que o adquirente era funcionário subalterno, procurador formal ou sócio minoritário em outras empresas controladas pelo devedor;
+- <strong>Preço Vil ou Simulação de Pagamento</strong>: Comparação do valor constante na escritura com o valor venal de referência fiscal (ITBI) e anúncios de mercado na mesma rua, revelando subfaturamento artificial;
+- <strong>Dispensa Expressa de Certidões Forenses Obrigatórias</strong>: Demonstração de que o adquirente, na escritura pública de compra e venda, dispensou voluntariamente a apresentação das certidões de distribuição de ações cíveis e de protesto da comarca do domicílio do vendedor, assumindo conscientemente o risco deliberado da evicção e afastando a presunção de boa-fé objetiva.</p>
+<hr />
+<h2 id="4-as-quatro-tipologias-classicas-de-ocultacao-patrimonial-no-brasil">4. As Quatro Tipologias Clássicas de Ocultação Patrimonial no Brasil<a class="headerlink" href="#4-as-quatro-tipologias-classicas-de-ocultacao-patrimonial-no-brasil" title="Permanent link">&para;</a></h2>
+<h3 id="41-doacao-com-reserva-de-usufruto-para-herdeiros-e-fraude-objetiva">4.1. Doação com Reserva de Usufruto para Herdeiros e Fraude Objetiva<a class="headerlink" href="#41-doacao-com-reserva-de-usufruto-para-herdeiros-e-fraude-objetiva" title="Permanent link">&para;</a></h3>
+<p>O devedor transfere a nua-propriedade de todo o seu acervo imobiliário para os filhos (frequentemente menores impúberes ou jovens estudantes), gravando os bens com cláusula de inalienabilidade, incomunicabilidade e reserva de usufruto vitalício em seu favor.
+- <em>Desfazimento Probatório</em>: Tratando-se de negócio jurídico a título <strong>gratuito</strong> (doação pura e simples), a jurisprudência pacífica do STJ e o art. 158 do Código Civil <strong>dispensam a prova de má-fé ou conluio subjetivo (consilium fraudis)</strong>. Basta demonstrar a anterioridade da dívida e que a doação reduziu o devedor à insolvência, autorizando a anulação imediata do ato ou a sua declaração de ineficácia nos próprios autos da execução.</p>
+<h3 id="42-divorcio-simulado-com-partilha-fraudulenta-de-bens">4.2. Divórcio Simulado com Partilha Fraudulenta de Bens<a class="headerlink" href="#42-divorcio-simulado-com-partilha-fraudulenta-de-bens" title="Permanent link">&para;</a></h3>
+<p>Diante do acúmulo de cobranças e execuções fiscais ou bancárias, o devedor ajuíza divórcio consensual ou lavra escritura pública de dissolução de sociedade conjugal, estabelecendo uma partilha manifestamente desigual: <strong>100% dos bens imóveis livres, veículos de alto luxo e investimentos financeiros são atribuídos com exclusividade ao cônjuge</strong>, enquanto o devedor fica unicamente com empresas endividadas ou obrigações pecuniárias.
+- <em>Desfazimento Probatório</em>: O Superior Tribunal de Justiça proclama a ineficácia e nulidade da partilha quando evidente a finalidade de blindagem patrimonial (STJ, REsp 1.745.312/SP). O relatório OSINT comprova por publicações geolocalizadas em redes sociais, compras conjuntas e registros em portarias de condomínios que o casal permanece em plena coabitação e vida conjugal aparente após o suposto divórcio, desmontando a fraude fática.</p>
+<h3 id="43-interposicao-fraudulenta-de-pessoas-fisicas-laranjas">4.3. Interposição Fraudulenta de Pessoas Físicas ("Laranjas")<a class="headerlink" href="#43-interposicao-fraudulenta-de-pessoas-fisicas-laranjas" title="Permanent link">&para;</a></h3>
+<p>Utilização de familiares idosos, ex-empregados, motoristas ou secretárias como sócios nominais ou titulares formais de imóveis e automóveis de alto luxo utilizados privativamente pelo devedor.
+- <em>Desfazimento Probatório</em>: Confrontar o perfil socioeconômico real do titular formal (beneficiário de auxílios assistenciais governamentais, ausência de declaração de IRPF, residência em bairros periféricos) com a capacidade financeira necessária para adquirir patrimônio multimilionário, demonstrando a interposição fraudulenta.</p>
+<h3 id="44-sucessao-empresarial-fraudulenta-de-fato-e-confusao-operacional">4.4. Sucessão Empresarial Fraudulenta de Fato e Confusão Operacional<a class="headerlink" href="#44-sucessao-empresarial-fraudulenta-de-fato-e-confusao-operacional" title="Permanent link">&para;</a></h3>
+<p>A empresa A (endividada) cessa formalmente suas operações sem quitar o passivo trabalhista e tributário. Simultaneamente, no mesmo endereço ou galpão, surge a empresa B, com novo CNPJ e nova razão social, mas mantendo o mesmo parque industrial, os mesmos empregados, a mesma clientela, as mesmas marcas e o mesmo controle gerencial de fato.
+- <em>Desfazimento Probatório</em>: Reunir registros fotográficos comparativos da fachada, notas fiscais de clientes idênticos, registros de domínio na internet (mesmo titular no Registro.br ou servidores DNS idênticos) e certidões de processos trabalhistas onde testemunhas confirmam que nunca houve descontinuidade do trabalho (Súmula 435 do STJ e art. 133 do CTN).</p>
+<hr />
+<h2 id="5-incidente-de-desconsideracao-da-personalidade-juridica-idpj-o-art-50-do-codigo-civil-apos-a-lei-138742019">5. Incidente de Desconsideração da Personalidade Jurídica (IDPJ): O Art. 50 do Código Civil após a Lei 13.874/2019<a class="headerlink" href="#5-incidente-de-desconsideracao-da-personalidade-juridica-idpj-o-art-50-do-codigo-civil-apos-a-lei-138742019" title="Permanent link">&para;</a></h2>
+<p>A disciplina da desconsideração da personalidade jurídica no direito comum brasileiro sofreu profunda reformulação com a promulgação da <strong>Lei da Liberdade Econômica (Lei nº 13.874/2019)</strong>, que conferiu nova redação ao art. 50 do Código Civil.</p>
+<p>O STJ (REsp 1.729.554/SP, 4ª Turma, Rel. Min. Luis Felipe Salomão; REsp 1.860.334/SP) reiterou que o sistema brasileiro adota, como regra geral no direito civil e empresarial, a <strong>Teoria Maior da Desconsideração</strong>, repelindo expressamente a aplicação analógica da Teoria Menor do Código de Defesa do Consumidor (art. 28, § 5º, CDC) às relações interempresariais e civis comuns.</p>
+<p>Dessa forma, a mera inexistência de bens penhoráveis ou o encerramento irregular da sociedade <strong>não autorizam, por si sós, a desconsideração da personalidade jurídica</strong>. É imprescindível a demonstração cabal de:
+1. <strong>Desvio de Finalidade</strong> (art. 50, § 1º, CC): a utilização dolosa da pessoa jurídica com o propósito manifesto de lesar credores ou praticar atos ilícitos; ou
+2. <strong>Confusão Patrimonial</strong> (art. 50, § 2º, CC): caracterizada pelo cumprimento reiterado pela sociedade de obrigações do sócio (ou vice-versa), transferência de ativos sem efetiva contraprestação ou esvaziamento patrimonial entre sociedades coligadas.</p>
+<p>O relatório OSINT é o instrumento que viabiliza o preenchimento dos pressupostos estritos da Lei 13.874/2019: a elaboração de grafos de relacionamento societário, a comprovação de sedes compartilhadas, o uso de funcionários em comum e o compartilhamento de marcas e websites provam a ocorrência de confusão patrimonial e grupo econômico fraudulento de fato.</p>
+<hr />
+<h2 id="6-boxes-metodologicos-e-jurisprudencia-aplicada">6. Boxes Metodológicos e Jurisprudência Aplicada<a class="headerlink" href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-fraude-a-execucao-e-sumula-375-do-stj-tema-repetitivo-243">⚖️ Validade Jurídica e Jurisprudência: Fraude à Execução e Súmula 375 do STJ (Tema Repetitivo 243)<a class="headerlink" href="#validade-juridica-e-jurisprudencia-fraude-a-execucao-e-sumula-375-do-stj-tema-repetitivo-243" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - Corte Especial
+- <strong>Recurso</strong>: REsp 956.943/PR - Tema 243 dos Recursos Repetitivos
+- <strong>Relatora Originária</strong>: Min. Nancy Andrighi | Relator p/ Acórdão: Min. João Otávio de Noronha
+- <strong>Data de Julgamento</strong>: 20/08/2014 | Publicação no DJe: 01/12/2014
+- <strong>Tese Fixada (STJ - Tema 243 / Súmula 375)</strong>:</p>
+<blockquote>
+<p><em>"O reconhecimento da fraude à execução depende do registro da penhora do bem alienado ou da prova de má-fé do terceiro adquirente (Súmula n. 375/STJ). A presunção de boa-fé do adquirente é princípio geral de direito admitido em nosso ordenamento, cabendo ao credor o ônus de provar que o terceiro tinha ciência da demanda contra o alienante capaz de reduzi-lo à insolvência."</em></p>
+</blockquote>
+<p><strong>Modelo de Parágrafo para Petição (Comprovação da Má-Fé com Dossiê OSINT):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>"Não obstante a ausência de averbação premonitória prévia na matrícula do imóvel nº 84.120 do 2º RGI, afasta-se de forma inequívoca a presunção de boa-fé do adquirente nos termos da Súmula 375 e do Tema Repetitivo 243 do STJ (REsp 956.943/PR). Restou cabalmente demonstrado pelo relatório investigativo em anexo (EVD-001 a EVD-005) que o terceiro adquirente é sobrinho carnal do executado e atua como seu procurador formal na sociedade Delta Participações. Ademais, conforme certidão lavrada na própria escritura pública de compra e venda, o adquirente dispensou expressamente a apresentação das certidões negativas de feitos ajuizados na comarca do domicílio do alienante, adquirindo o bem por valor equivalente a apenas 30% da avaliação fiscal do ITBI contemporâneo. Evidenciada a ciência prévia da insolvência e a má-fé subjetiva dos partícipes, requer-se o reconhecimento da fraude à execução com esteio no art. 792, IV, do CPC, declarando-se a ineficácia da alienação perante o credor exequente e determinando-se a imediata penhora do imóvel."
+</code></pre></div></p>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-desconsideracao-da-personalidade-juridica-e-lei-138742019">⚖️ Validade Jurídica e Jurisprudência: Desconsideração da Personalidade Jurídica e Lei 13.874/2019<a class="headerlink" href="#validade-juridica-e-jurisprudencia-desconsideracao-da-personalidade-juridica-e-lei-138742019" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - 4ª Turma
+- <strong>Recurso</strong>: REsp 1.729.554/SP
+- <strong>Relator</strong>: Ministro Luis Felipe Salomão
+- <strong>Data de Julgamento</strong>: 08/05/2018 | Publicação no DJe: 12/06/2018
+- <strong>Ementa Síntese</strong>: A teoria maior da desconsideração da personalidade jurídica, encampada pelo art. 50 do Código Civil, exige a comprovação inequívoca do desvio de finalidade ou da confusão patrimonial, sendo insuficiente a mera insolvência da pessoa jurídica ou a ausência de bens penhoráveis. A existência de grupo econômico de fato, com identidade de sócios, confusão de sedes e desvio coordenado de faturamento, configura confusão patrimonial apta a legitimar a extensão dos efeitos da execução aos patrimônios das coligadas e administradores.</p>
+<p><strong>Modelo de Parágrafo para Petição (Instauração de IDPJ):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"Com fundamento nos arts. 133 a 137 do CPC e no art. 50, § 2º, do Código Civil (com a redação dada pela Lei nº 13.874/2019), requer-se a instauração do Incidente de Desconsideração da Personalidade Jurídica. Conforme demonstra o diagrama relacional e as fichas da Junta Comercial acostadas ao relatório de inteligência forense, a empresa executada teve seu faturamento completamente esvaziado enquanto a sociedade coligada Alpha Logística Ltda., constituída pelos mesmos sócios e sediada no mesmo galpão industrial, passou a receber os créditos e a emitir faturas para a carteira de clientes originária. Demonstrada a confusão patrimonial objetiva e o desvio coordenado de finalidade econômica nos termos estritos firmados pelo STJ no REsp 1.729.554/SP, requer-se a citação da empresa coligada e dos sócios controladores para que integrem o polo passivo da execução, respondendo seus patrimônios pessoais pela totalidade do crédito exequendo."
+</code></pre></div></p>
+<p>[!IMPORTANT]</p>
+<h3 id="sinal-de-atencao-a-constituicao-da-holding-no-trimestre-da-sentenca-condenatoria">🚩 Sinal de Atenção: A Constituição da Holding no Trimestre da Sentença Condenatória<a class="headerlink" href="#sinal-de-atencao-a-constituicao-da-holding-no-trimestre-da-sentenca-condenatoria" title="Permanent link">&para;</a></h3>
+<p>Ao examinar o histórico societário na Junta Comercial, confronte a data de constituição da holding patrimonial com a linha do tempo do processo de conhecimento. Se a holding foi aberta exatamente no intervalo entre a prolação da sentença condenatória e o trânsito em julgado, com a imediata integralização de capital social mediante transferência de todos os imóveis da família, há <strong>presunção veemente de fraude à execução</strong> (CPC, art. 792, IV, e STJ, REsp 1.879.467/SP), justificando a penhora incidental direta dos bens integralizados.</p>
+<p>[!CAUTION]</p>
+<h3 id="nao-conclua-ainda-doacao-licita-em-vida-vs-doacao-em-fraude">⚠️ Não Conclua Ainda: Doação Lícita em Vida vs. Doação em Fraude<a class="headerlink" href="#nao-conclua-ainda-doacao-licita-em-vida-vs-doacao-em-fraude" title="Permanent link">&para;</a></h3>
+<p>Pais e mães têm a faculdade de doar bens aos descendentes como adiantamento de legítima (CC, art. 544), desde que respeitada a fração indisponível dos herdeiros necessários (CC, art. 549) e mantidos bens suficientes para o adimplemento de suas obrigações preexistentes. A fraude só se aperfeiçoa se o acervo patrimonial remanescente sob a titularidade do doador for insuficiente para satisfazer os débitos em cobrança.</p>
+<p>[!IMPORTANT]</p>
+<h3 id="onde-osint-para-e-entra-a-medida-judicial-quebra-de-sigilo-bancario-e-fiscal-via-sisbajud-sniper">🛑 Onde OSINT Para e Entra a Medida Judicial: Quebra de Sigilo Bancário e Fiscal via SISBAJUD / SNIPER<a class="headerlink" href="#onde-osint-para-e-entra-a-medida-judicial-quebra-de-sigilo-bancario-e-fiscal-via-sisbajud-sniper" title="Permanent link">&para;</a></h3>
+<p>A investigação em fontes abertas atinge seu limite ao demonstrar a existência da confusão operacional e a interposição de sócios laranjas. Contudo, a prova cabal do fluxo financeiro interno (transferências bancárias entre contas de pessoas físicas e jurídicas do grupo) depende da tutela jurisdicional. Uma vez admitido o IDPJ com base nos indícios de OSINT, requeira a utilização do módulo <strong>SIMBA / CCS (Cadastro de Clientes do Sistema Financeiro Nacional)</strong> e do <strong>SNIPER</strong> para mapear a movimentação bancária cruzada entre os investigados.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

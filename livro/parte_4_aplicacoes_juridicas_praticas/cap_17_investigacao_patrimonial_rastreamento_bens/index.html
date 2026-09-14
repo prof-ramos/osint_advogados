@@ -1,0 +1,2828 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manual prático, juridicamente rigoroso e tecnicamente operacional de inteligência em fontes abertas no Direito brasileiro.">
+      
+      
+        <meta name="author" content="Prof. Gabriel Ramos">
+      
+      
+      
+        <link rel="prev" href="../cap_16_localizacao_devedores_execucao/">
+      
+      
+        <link rel="next" href="../cap_18_fraude_contra_credores_ocultacao_patrimonial/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap. 17 - Rastreamento Patrimonial e Ativos - OSINT Aplicado ao Direito Brasileiro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-17-investigacao-patrimonial-imoveis-veiculos-participacoes-societarias-e-ativos-intangiveis" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-header__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Aplicado ao Direito Brasileiro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap. 17 - Rastreamento Patrimonial e Ativos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../00_sumario_e_apresentacao/" class="md-tabs__link">
+          
+  
+  
+  O Manual (Livro)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-tabs__link">
+          
+  
+  
+  Casos Práticos Forenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-tabs__link">
+          
+  
+  
+  Base Dinâmica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-tabs__link">
+          
+  
+  
+  Dataset OSINT Brazuca
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-tabs__link">
+          
+  
+  
+  Curso de 72h
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-tabs__link">
+          
+  
+  
+  Governança e ADRs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-nav__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Aplicado ao Direito Brasileiro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O Manual (Livro)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    O Manual (Livro)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_sumario_e_apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_01_investigacao_osint_direito_brasileiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 01 - OSINT no Direito Brasileiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_02_regime_juridico_lgpd_lai_marco_civil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 02 - Regime Jurídico (LGPD, LAI e MCI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_03_investigacao_defensiva_provimento_188/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 03 - Investigação Defensiva (Prov. 188)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_04_prova_digital_cadeia_custodia_mesmidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 04 - Prova Digital e Cadeia de Custódia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_05_ciclo_investigativo_10_etapas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 05 - O Ciclo Investigativo em 10 Etapas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_06_separacao_epistemologica_fato_inferencia_hipotese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 06 - Separação Epistemológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_07_sistema_matriz_evidencias_relatorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 07 - Sistema da Matriz de Evidências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_08_pesquisa_web_avancada_dorking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 08 - Pesquisa Web Avançada e Dorking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_09_investigacao_identidade_pessoas_naturais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 09 - Identidade de Pessoas Naturais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_10_investigacao_societaria_pessoas_juridicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 10 - Investigação Societária (PJs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_11_analise_documental_metadados_arquivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 11 - Análise Documental e Metadados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_12_redes_sociais_atribuicao_comportamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 12 - Redes Sociais e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_13_imagens_videos_geolocalizacao_satelite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 13 - Imagens, Vídeos e Geolocalização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_14_web_historica_infraestrutura_digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 14 - Web Histórica e Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_15_analise_vinculos_grafos_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 15 - Grafos e Análise de Vínculos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 4 - Aplicações Práticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 4 - Aplicações Práticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_16_localizacao_devedores_execucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 16 - Localização de Devedores na Execução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 17 - Rastreamento Patrimonial e Ativos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 17 - Rastreamento Patrimonial e Ativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-conceito-de-patrimonio-executavel-e-a-superacao-da-penhora-tradicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. O Conceito de Patrimônio Executável e a Superação da Penhora Tradicional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rastreamento-imobiliario-centralizado-o-ecossistema-saec-onr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Rastreamento Imobiliário Centralizado: O Ecossistema SAEC / ONR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Rastreamento Imobiliário Centralizado: O Ecossistema SAEC / ONR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-anatomia-forense-da-certidao-de-matricula-imobiliaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Anatomia Forense da Certidão de Matrícula Imobiliária:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rastreamento-de-veiculos-automotores-aeronaves-e-embarcacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rastreamento de Veículos Automotores, Aeronaves e Embarcações
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Rastreamento de Veículos Automotores, Aeronaves e Embarcações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-veiculos-automotores-e-a-penhora-de-direitos-aquisitivos-cpc-art-835-xii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Veículos Automotores e a Penhora de Direitos Aquisitivos (CPC, Art. 835, XII)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aeronaves-civis-o-registro-aeronautico-brasileiro-rab-anac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Aeronaves Civis: O Registro Aeronáutico Brasileiro (RAB / ANAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-embarcacoes-nauticas-marinha-do-brasil-e-capitanias-dos-portos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Embarcações Náuticas: Marinha do Brasil e Capitanias dos Portos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-penhora-de-quotas-de-sociedade-limitada-o-art-861-do-cpc-e-o-precedente-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Penhora de Quotas de Sociedade Limitada: O Art. 861 do CPC e o Precedente do STJ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-penhora-sobre-o-faturamento-da-empresa-e-bloqueio-de-recebiveis-o-tema-repetitivo-769-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Penhora sobre o Faturamento da Empresa e Bloqueio de Recebíveis: O Tema Repetitivo 769 do STJ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rastreamento-e-penhora-de-criptoativos-e-ativos-virtuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Rastreamento e Penhora de Criptoativos e Ativos Virtuais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-penhora-sobre-faturamento-e-recebiveis-de-cartao-tema-769-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Penhora sobre Faturamento e Recebíveis de Cartão (Tema 769 do STJ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-penhora-de-quotas-sociais-de-sociedade-limitada-stj-e-cpc-art-861" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Penhora de Quotas Sociais de Sociedade Limitada (STJ e CPC, Art. 861)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivo-da-marca-no-inpi-a-penhora-de-royalties-e-adjudicacao-comercial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔎 Pivô: Da Marca no INPI à Penhora de Royalties e Adjudicação Comercial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonte-brasileira-o-sistema-nacional-de-informacoes-territoriais-sinter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🇧🇷 Fonte Brasileira: O Sistema Nacional de Informações Territoriais (SINTER)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-a-protecao-do-bem-de-familia-lei-80091990-e-suas-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: A Proteção do Bem de Família (Lei 8.009/1990) e suas Exceções
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_18_fraude_contra_credores_ocultacao_patrimonial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 18 - Fraude a Credores e Ocultação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_19_direito_familia_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 19 - Família e Execução de Alimentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_20_ilicitos_ciberneticos_atribuicao_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 20 - Crimes Cibernéticos e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_21_due_diligence_compliance_risco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 21 - Due Diligence e Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_22_quando_osint_e_insuficiente_medidas_judiciais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 22 - Medidas Judiciais e SNIPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 5 - Casos e Exercícios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 5 - Casos e Exercícios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 23 - Estudos de Caso Guiados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_24_laboratorio_integrado_simulacao_contraditorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 24 - Simulação em Contraditório
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos Práticos Forenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos Práticos Forenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 01 - Localização de Devedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_02_devedor_aparentemente_insolvente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 02 - Insolvência e Blindagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_03_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 03 - Alimentos e Sinais de Riqueza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_04_perfil_anonimo_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 04 - Perfil Anônimo em Redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_05_publicacao_apagada_preservacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 05 - Publicação Apagada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_06_empresa_suspeita_societario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 06 - Empresa Suspeita / Noteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_07_caso_integrado_completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 07 - Desafio Integrado Multivetorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Base Dinâmica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Portais e Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/checklist_verificacao_links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist Trimestral de Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset OSINT Brazuca
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dataset OSINT Brazuca
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento de Fontes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/protocolo_validacao_fontes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo de Admissão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso de 72h
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso de 72h
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Banco de Questões Comentadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governança e ADRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governança e ADRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001 - Livro Perene vs Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-conceito-de-patrimonio-executavel-e-a-superacao-da-penhora-tradicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. O Conceito de Patrimônio Executável e a Superação da Penhora Tradicional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rastreamento-imobiliario-centralizado-o-ecossistema-saec-onr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Rastreamento Imobiliário Centralizado: O Ecossistema SAEC / ONR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Rastreamento Imobiliário Centralizado: O Ecossistema SAEC / ONR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-anatomia-forense-da-certidao-de-matricula-imobiliaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Anatomia Forense da Certidão de Matrícula Imobiliária:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rastreamento-de-veiculos-automotores-aeronaves-e-embarcacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rastreamento de Veículos Automotores, Aeronaves e Embarcações
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Rastreamento de Veículos Automotores, Aeronaves e Embarcações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-veiculos-automotores-e-a-penhora-de-direitos-aquisitivos-cpc-art-835-xii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Veículos Automotores e a Penhora de Direitos Aquisitivos (CPC, Art. 835, XII)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aeronaves-civis-o-registro-aeronautico-brasileiro-rab-anac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Aeronaves Civis: O Registro Aeronáutico Brasileiro (RAB / ANAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-embarcacoes-nauticas-marinha-do-brasil-e-capitanias-dos-portos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Embarcações Náuticas: Marinha do Brasil e Capitanias dos Portos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-penhora-de-quotas-de-sociedade-limitada-o-art-861-do-cpc-e-o-precedente-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Penhora de Quotas de Sociedade Limitada: O Art. 861 do CPC e o Precedente do STJ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-penhora-sobre-o-faturamento-da-empresa-e-bloqueio-de-recebiveis-o-tema-repetitivo-769-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Penhora sobre o Faturamento da Empresa e Bloqueio de Recebíveis: O Tema Repetitivo 769 do STJ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rastreamento-e-penhora-de-criptoativos-e-ativos-virtuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Rastreamento e Penhora de Criptoativos e Ativos Virtuais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-penhora-sobre-faturamento-e-recebiveis-de-cartao-tema-769-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Penhora sobre Faturamento e Recebíveis de Cartão (Tema 769 do STJ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-penhora-de-quotas-sociais-de-sociedade-limitada-stj-e-cpc-art-861" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Penhora de Quotas Sociais de Sociedade Limitada (STJ e CPC, Art. 861)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivo-da-marca-no-inpi-a-penhora-de-royalties-e-adjudicacao-comercial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔎 Pivô: Da Marca no INPI à Penhora de Royalties e Adjudicação Comercial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonte-brasileira-o-sistema-nacional-de-informacoes-territoriais-sinter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🇧🇷 Fonte Brasileira: O Sistema Nacional de Informações Territoriais (SINTER)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-a-protecao-do-bem-de-familia-lei-80091990-e-suas-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: A Proteção do Bem de Família (Lei 8.009/1990) e suas Exceções
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="capitulo-17-investigacao-patrimonial-imoveis-veiculos-participacoes-societarias-e-ativos-intangiveis">Capítulo 17: Investigação Patrimonial: Imóveis, Veículos, Participações Societárias e Ativos Intangíveis<a class="headerlink" href="#capitulo-17-investigacao-patrimonial-imoveis-veiculos-participacoes-societarias-e-ativos-intangiveis" title="Permanent link">&para;</a></h1>
+<h2 id="1-o-conceito-de-patrimonio-executavel-e-a-superacao-da-penhora-tradicional">1. O Conceito de Patrimônio Executável e a Superação da Penhora Tradicional<a class="headerlink" href="#1-o-conceito-de-patrimonio-executavel-e-a-superacao-da-penhora-tradicional" title="Permanent link">&para;</a></h2>
+<p>Na dogmática do Direito Processual Civil brasileiro, a execução patrimonial é regida pelo princípio da responsabilidade patrimonial (CPC, art. 789), segundo o qual o devedor responde com todos os seus bens presentes e futuros para o cumprimento de suas obrigações, ressalvadas as restrições expressamente estatuídas em lei (hipóteses de impenhorabilidade do art. 833 do CPC e da Lei nº 8.009/1990).</p>
+<p>Entretanto, a prática forense contemporânea deparou-se com a rápida sofisticação das práticas de blindagem: devedores profissionais e empresas insolventes raramente mantêm saldos expressivos em contas correntes passíveis de constrição imediata pelo sistema SISBAJUD. O patrimônio econômico real encontra-se descolado da titularidade bancária tradicional e estruturado em:
+1. <strong>Participações societárias em sociedades limitadas e anônimas lucrativas</strong>;
+2. <strong>Recebíveis de cartão de crédito e fluxos contínuos de faturamento</strong>;
+3. <strong>Imóveis registrados em comarcas diversas ou sob formas condominiais desmembradas</strong>;
+4. <strong>Frotas de veículos e direitos aquisitivos decorrentes de contratos de alienação fiduciária</strong>;
+5. <strong>Ativos intangíveis de elevado valor comercial, tais como marcas registradas, softwares e criptoativos</strong>.</p>
+<p>A investigação patrimonial em fontes abertas atua precisamente no mapeamento desse ecossistema econômico antes que o devedor, advertido pelo ajuizamento da execução, promova a dissipação fraudulenta de seus ativos.</p>
+<hr />
+<h2 id="2-rastreamento-imobiliario-centralizado-o-ecossistema-saec-onr">2. Rastreamento Imobiliário Centralizado: O Ecossistema SAEC / ONR<a class="headerlink" href="#2-rastreamento-imobiliario-centralizado-o-ecossistema-saec-onr" title="Permanent link">&para;</a></h2>
+<p>No ordenamento jurídico brasileiro, a aquisição da propriedade imobiliária entre vivos é ato solene e constitutivo que somente se aperfeiçoa com o registro do título translativo perante o Cartório de Registro de Imóveis competente (Código Civil, art. 1.245). A posse física ou o mero contrato particular de promessa de compra e venda ("contrato de gaveta") não transferem o domínio, gerando efeitos meramente obrigacionais entre as partes.</p>
+<p>Com a implantação do <strong>Operador Nacional do Sistema de Registro de Imóveis (ONR)</strong> e de seu portal unificado — o <strong>Serviço de Atendimento Eletrônico Compartilhado (SAEC)</strong> em <code>registradores.onr.org.br</code> —, a advocacia dispõe de acesso direto e centralizado a todos os cartórios de registro de imóveis do país:</p>
+<pre class="mermaid"><code>flowchart LR
+    A[CPF ou CNPJ do Devedor] --&gt; B[SAEC / ONR: Pesquisa Prévia Nacional de Bens]
+    B --&gt; C[Localização das Comarcas e Cartórios de Imóveis com Ocorrências]
+    C --&gt; D[Emissão Online de Certidão Digital de Inteiro Teor / Matrícula]
+    D --&gt; E[Auditoria do Histórico de Ônus, Alienações e Usufrutos]
+    E --&gt; F[Peticionamento: Penhora Direta ou Pedido de Reconhecimento de Fraude]</code></pre>
+<h3 id="21-anatomia-forense-da-certidao-de-matricula-imobiliaria">2.1. Anatomia Forense da Certidão de Matrícula Imobiliária:<a class="headerlink" href="#21-anatomia-forense-da-certidao-de-matricula-imobiliaria" title="Permanent link">&para;</a></h3>
+<p>Ao analisar a certidão de inteiro teor do imóvel localizado, o advogado deve realizar a auditoria analítica de três camadas documentais:
+- <strong>Descrição do Imóvel no Cabeçalho</strong>: Delimitação exata da metragem quadrada, confrontações e acessões artificiais (construções e edificações). <em>Utilidade Forense</em>: Identificar desmembramentos de fato, construções de alto padrão não averbadas na matrícula (que justificam reavaliação pericial) ou existência de unidades autônomas que descaracterizam a tese de bem de família sobre a totalidade da área.
+- <strong>Registros (R.)</strong>: Atos translativos de domínio (compra e venda, permuta, dação em pagamento, doação e partilha de bens). Permite rastrear a cronologia exata das alienações e identificar negócios gratuitos simulados em prol de herdeiros ou holdings familiares.
+- <strong>Averbações (Av.)</strong>: Modificações circunstanciais da matrícula e da situação jurídica do imóvel (penhoras judiciais pretéritas, servidões, usufruto vitalício, cláusulas de inalienabilidade e ajuizamento de execuções averbadas na forma do art. 828 do CPC).</p>
+<hr />
+<h2 id="3-rastreamento-de-veiculos-automotores-aeronaves-e-embarcacoes">3. Rastreamento de Veículos Automotores, Aeronaves e Embarcações<a class="headerlink" href="#3-rastreamento-de-veiculos-automotores-aeronaves-e-embarcacoes" title="Permanent link">&para;</a></h2>
+<h3 id="31-veiculos-automotores-e-a-penhora-de-direitos-aquisitivos-cpc-art-835-xii">3.1. Veículos Automotores e a Penhora de Direitos Aquisitivos (CPC, Art. 835, XII)<a class="headerlink" href="#31-veiculos-automotores-e-a-penhora-de-direitos-aquisitivos-cpc-art-835-xii" title="Permanent link">&para;</a></h3>
+<p>A consulta aos sistemas integrados dos DETRANs estaduais a partir da placa do veículo e código RENAVAM permite averiguar o município de emplacamento, ano de fabricação, histórico de infrações e restrições financeiras.
+- <em>Estratégia Processual</em>: Quando o veículo está gravado com cláusula de <strong>alienação fiduciária em garantia</strong>, a propriedade fiduciária pertence à instituição financeira credora, não podendo a penhora recair diretamente sobre o casco do automóvel. Todavia, a jurisprudência pacífica do STJ (REsp 1.884.286/SP) estabelece que a constrição judicial pode recair licitamente sobre os <strong>direitos aquisitivos derivados do contrato de financiamento</strong> (CPC, art. 835, XII). De posse do contrato ou do extrato de financiamento, o juiz intima o banco fiduciário para que, após a quitação do saldo devedor, o saldo remanescente ou a transferência do domínio seja vertida aos autos da execução.</p>
+<h3 id="32-aeronaves-civis-o-registro-aeronautico-brasileiro-rab-anac">3.2. Aeronaves Civis: O Registro Aeronáutico Brasileiro (RAB / ANAC)<a class="headerlink" href="#32-aeronaves-civis-o-registro-aeronautico-brasileiro-rab-anac" title="Permanent link">&para;</a></h3>
+<p>A Agência Nacional de Aviação Civil (ANAC) mantém pública e irrestrita a base de dados do Registro Aeronáutico Brasileiro em seu portal eletrônico (<code>sistemas.anac.gov.br/aeronaves/cons_rab.asp</code>). A busca por nome completo, CPF ou CNPJ do proprietário ou operador revela instantaneamente a titularidade de jatos executivos, turboélices, helicópteros e aeronaves agrícolas, exibindo dados como fabricante, modelo, número de série, situação do certificado de navegabilidade e ônus reais registrados.</p>
+<h3 id="33-embarcacoes-nauticas-marinha-do-brasil-e-capitanias-dos-portos">3.3. Embarcações Náuticas: Marinha do Brasil e Capitanias dos Portos<a class="headerlink" href="#33-embarcacoes-nauticas-marinha-do-brasil-e-capitanias-dos-portos" title="Permanent link">&para;</a></h3>
+<p>Iates, lanchas, veleiros e motos aquáticas (jet-skis) são matriculados perante as Capitanias dos Portos subordinadas à Diretoria de Portos e Costas (DPC) da Marinha do Brasil. Embora não haja uma consulta web aberta por CPF em nível nacional, o cruzamento de postagens em redes sociais geolocalizadas em marinas, fotos da proa contendo o nome e número de inscrição da embarcação e registros em clubes náuticos viabiliza a expedição de ofício judicial direcionado à Capitania competente para penhora do bem náutico.</p>
+<hr />
+<h2 id="4-penhora-de-quotas-de-sociedade-limitada-o-art-861-do-cpc-e-o-precedente-do-stj">4. Penhora de Quotas de Sociedade Limitada: O Art. 861 do CPC e o Precedente do STJ<a class="headerlink" href="#4-penhora-de-quotas-de-sociedade-limitada-o-art-861-do-cpc-e-o-precedente-do-stj" title="Permanent link">&para;</a></h2>
+<p>Um dos erros mais comuns na execução é admitir a insolvência do devedor pessoa física que não possui contas bancárias ativas nem imóveis registrados em seu nome próprio, ignorando que ele é titular de expressiva participação no capital social de sociedades empresárias lucrativas.</p>
+<p>O Código de Processo Civil prevê expressamente no art. 835, IX, a <strong>penhora de quotas ou ações de sociedades empresárias</strong>. Durante décadas, advogados de devedores alegaram a intangibilidade das quotas com base no princípio da <em>affectio societatis</em> (a recusa dos demais sócios em conviver com um terceiro credor estranho ao quadro societário).</p>
+<p>Essa controvérsia foi definitivamente superada pelo Superior Tribunal de Justiça e pelo art. 861 do CPC de 2015. O STJ assentou que a <em>affectio societatis</em> não pode servir de escudo para inadimplência, estabelecendo o art. 861 um procedimento harmônico em três etapas sucessivas:
+1. O juiz determina a penhora das quotas e intima a sociedade;
+2. É assegurado o direito de preferência aos sócios remanescentes para aquisição das quotas penhoradas pelo valor apurado;
+3. Se nenhum sócio manifestar interesse na compra e a sociedade não adquirir as quotas para mantê-las em tesouraria, procede-se à <strong>apuração de haveres por balanço especial</strong>, depositando a sociedade em juízo o valor em dinheiro correspondente à quota liquidada.</p>
+<hr />
+<h2 id="5-penhora-sobre-o-faturamento-da-empresa-e-bloqueio-de-recebiveis-o-tema-repetitivo-769-do-stj">5. Penhora sobre o Faturamento da Empresa e Bloqueio de Recebíveis: O Tema Repetitivo 769 do STJ<a class="headerlink" href="#5-penhora-sobre-o-faturamento-da-empresa-e-bloqueio-de-recebiveis-o-tema-repetitivo-769-do-stj" title="Permanent link">&para;</a></h2>
+<p>Quando o devedor é uma pessoa jurídica em funcionamento que frustra as ordens de bloqueio do SISBAJUD mediante a utilização de contas bancárias secundárias ou esvaziamento diário de caixas, a via executiva adequada é a <strong>penhora sobre o faturamento</strong> (CPC, art. 866) e o <strong>bloqueio de recebíveis de cartão de crédito perante as adquirentes e subadquirentes (gateways de pagamento)</strong>.</p>
+<p>A 1ª Seção do Superior Tribunal de Justiça pacificou a matéria sob o rito dos recursos repetitivos no <strong>Tema 769</strong> (REsp 1.666.542/SP e REsp 1.666.543/SP, Rel. Min. Herman Benjamin), fixando balizas mandatórias para que a penhora de faturamento não comprometa a subsistência da atividade econômica.</p>
+<p>A investigação OSINT atua como elemento probatório essencial para viabilizar o Tema 769: mediante a análise de compras-teste em sites de e-commerce da empresa, checagem do CNPJ do emissor em cupons fiscais e inspeção de maquininhas de cartão nos pontos físicos de venda, o credor identifica exatamente quais são as adquirentes (ex.: Cielo, Rede, Stone, PagSeguro, Mercado Pago) e requer a constrição judicial direta sobre os repasses devidos pelas operadoras.</p>
+<hr />
+<h2 id="6-rastreamento-e-penhora-de-criptoativos-e-ativos-virtuais">6. Rastreamento e Penhora de Criptoativos e Ativos Virtuais<a class="headerlink" href="#6-rastreamento-e-penhora-de-criptoativos-e-ativos-virtuais" title="Permanent link">&para;</a></h2>
+<p>A popularização do Bitcoin, Ethereum, stablecoins (USDT, USDC) e outros criptoativos fez surgir um novo canal de blindagem patrimonial digital.</p>
+<p>No ordenamento processual civil, os criptoativos ostentam a natureza jurídica de <strong>bens móveis incorpóreos dotados de expressão econômica</strong>, sendo plenamente passíveis de penhora com esteio no art. 835, XIII, do CPC ("outros direitos").</p>
+<p>A atuação executiva divide-se em dois cenários técnicos:
+1. <strong>Criptoativos sob Custódia de Exchanges Nacionais</strong>: Corretoras sediadas no Brasil (ex.: Mercado Bitcoin, Foxbit, Binance Brasil) sujeitam-se à jurisdição brasileira, à disciplina da Lei nº 14.478/2022 (Marco Legal dos Criptoativos) e às obrigações de reporte da Instrução Normativa RFB nº 1888/2019. O juiz da execução pode expedir ofício judicial determinando a localização de contas, o bloqueio do saldo e a liquidação em moeda fiduciária nacional para depósito em conta judicial.
+2. <strong>Criptoativos em Carteiras de Autocustódia (Cold Wallets / Hardwallets)</strong>: Quando o executado mantém seus ativos em chaves privadas fora das corretoras centralizadas, a constrição técnica direta sem a chave privada é impossível pela própria arquitetura da criptografia descentralizada. Nesse caso, a demonstração por fontes abertas (declarações em redes sociais, movimentações em transações públicas na blockchain associadas à identidade do alvo) legitima o requerimento de intimação pessoal do devedor sob pena de multa diária (art. 536, § 1º, CPC), caracterização de ato atentatório à dignidade da justiça (art. 774, III, CPC) e aplicação de medidas atípicas (art. 139, IV, CPC).</p>
+<hr />
+<h2 id="7-boxes-metodologicos-e-jurisprudencia-aplicada">7. Boxes Metodológicos e Jurisprudência Aplicada<a class="headerlink" href="#7-boxes-metodologicos-e-jurisprudencia-aplicada" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-penhora-sobre-faturamento-e-recebiveis-de-cartao-tema-769-do-stj">⚖️ Validade Jurídica e Jurisprudência: Penhora sobre Faturamento e Recebíveis de Cartão (Tema 769 do STJ)<a class="headerlink" href="#validade-juridica-e-jurisprudencia-penhora-sobre-faturamento-e-recebiveis-de-cartao-tema-769-do-stj" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - 1ª Seção
+- <strong>Recurso</strong>: REsp 1.666.542/SP e REsp 1.666.543/SP - Tema 769 dos Recursos Repetitivos
+- <strong>Relator</strong>: Ministro Herman Benjamin
+- <strong>Data de Julgamento</strong>: 09/12/2020 | Publicação no DJe: 04/02/2021
+- <strong>Tese Fixada (STJ - Tema 769)</strong>:</p>
+<blockquote>
+<p><em>"A penhora sobre o faturamento é medida excepcional, que depende do preenchimento concomitante dos seguintes requisitos: (i) inexistência de bens penhoráveis ou, se existentes, forem de difícil liquidação; (ii) nomeação de administrador-depositário, que deverá apresentar a forma de administração e o plano de pagamento; e (iii) fixação de percentual que não inviabilize a continuidade das atividades da empresa."</em></p>
+</blockquote>
+<p><strong>Modelo de Parágrafo para Petição (Bloqueio de Recebíveis em Operadoras de Maquininha):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>"Restando negativas as tentativas de constrição via SISBAJUD e não tendo o devedor indicado bens à penhora, comprova o exequente, através do relatório operacional de inteligência em anexo, que a pessoa jurídica executada permanece em plena operação comercial, auferindo receitas substanciais mediante pagamentos por cartão de débito e crédito intermediados pelas adquirentes Stone Pagamentos e Mercado Pago (conforme comprovam os cupons fiscais e notas de compra acostadas, EVD-001 a EVD-003). Demonstrada a frustração dos meios típicos e a manutenção da higidez operacional da empresa, requer-se, com fundamento no art. 866 do CPC e na tese vinculante do Tema Repetitivo 769 do STJ (REsp 1.666.542/SP), a expedição urgente de ofício às adquirentes supra para que procedam à penhora e retenção de 10% (dez por cento) do faturamento bruto liquidado em favor da devedora, depositando os respectivos valores em conta judicial vinculada a este juízo, nomeando-se o representante legal da executada como depositário dos valores retidos."
+</code></pre></div></p>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-penhora-de-quotas-sociais-de-sociedade-limitada-stj-e-cpc-art-861">⚖️ Validade Jurídica e Jurisprudência: Penhora de Quotas Sociais de Sociedade Limitada (STJ e CPC, Art. 861)<a class="headerlink" href="#validade-juridica-e-jurisprudencia-penhora-de-quotas-sociais-de-sociedade-limitada-stj-e-cpc-art-861" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - 3ª Turma
+- <strong>Recurso</strong>: REsp 1.877.339/SP
+- <strong>Relator</strong>: Ministro Ricardo Villas Bôas Cueva
+- <strong>Data de Julgamento</strong>: 24/08/2021 | Publicação no DJe: 31/08/2021
+- <strong>Ementa Síntese</strong>: O princípio da <em>affectio societatis</em> não é oponível à satisfação de dívida particular de sócio. É legítima a penhora das quotas sociais pertencentes ao executado em sociedade limitada, devendo o juízo observar o rito procedimental estabelecido no art. 861 do Código de Processo Civil de 2015, assegurando aos demais sócios e à sociedade o direito de preferência e, em não havendo manifestação de interesse, determinando a liquidação das quotas mediante balanço especial de apuração de haveres.</p>
+<p><strong>Modelo de Parágrafo para Petição:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"Instruída a presente manifestação com a Certidão de Inteiro Teor expedida pela Junta Comercial do Estado de São Paulo (JUCESP), verifica-se que o executado é titular de 50.000 quotas sociais da sociedade Delta Serviços Médicos Ltda., correspondentes a 50% de seu capital social subscrito e integralizado. Conforme assentado pela 3ª Turma do STJ no REsp 1.877.339/SP e expressamente positivado no art. 861 do CPC, a affectio societatis não impede a penhora de quotas por dívida pessoal do titular. Requer-se a decretação de penhora sobre a totalidade das quotas sociais do executado, intimando-se a sociedade e os demais sócios no endereço contratual para que exerçam o direito de preferência ou procedam à apuração de haveres por balanço especial com depósito do valor liquidado perante este juízo."
+</code></pre></div></p>
+<p>[!TIP]</p>
+<h3 id="pivo-da-marca-no-inpi-a-penhora-de-royalties-e-adjudicacao-comercial">🔎 Pivô: Da Marca no INPI à Penhora de Royalties e Adjudicação Comercial<a class="headerlink" href="#pivo-da-marca-no-inpi-a-penhora-de-royalties-e-adjudicacao-comercial" title="Permanent link">&para;</a></h3>
+<p>Se a empresa executada não possui bens tangíveis em seu nome, pesquise o nome comercial ou denominação fantasia na base pública do Instituto Nacional da Propriedade Industrial (<strong>INPI</strong> - <code>inpi.gov.br</code>). O registro de uma marca confere exclusividade e possui valor econômico autônomo apreciável (CPC, art. 835, XIII). Uma vez penhorada a marca, o credor pode requerer o arresto de royalties pagos por franqueados ou a sua adjudicação judicial e leilão.</p>
+<p>[!TIP]</p>
+<h3 id="fonte-brasileira-o-sistema-nacional-de-informacoes-territoriais-sinter">🇧🇷 Fonte Brasileira: O Sistema Nacional de Informações Territoriais (SINTER)<a class="headerlink" href="#fonte-brasileira-o-sistema-nacional-de-informacoes-territoriais-sinter" title="Permanent link">&para;</a></h3>
+<p>Instituído pelo Decreto nº 8.764/2016 e sob coordenação da Secretaria da Receita Federal, o SINTER integra cadastros fundiários, fiscais e geoespaciais de imóveis rurais e urbanos de todo o país. A base permite correlacionar o Cadastro Nacional de Imóveis Rurais (CNIR) e o Cadastro Ambiental Rural (CAR), possibilitando identificar glebas, fazendas e propriedades rurais que constam nos órgãos ambientais mas que ainda não foram regularizadas nos cartórios de imóveis tradicionais.</p>
+<p>[!WARNING]</p>
+<h3 id="limite-juridico-a-protecao-do-bem-de-familia-lei-80091990-e-suas-excecoes">⚖️ Limite Jurídico: A Proteção do Bem de Família (Lei 8.009/1990) e suas Exceções<a class="headerlink" href="#limite-juridico-a-protecao-do-bem-de-familia-lei-80091990-e-suas-excecoes" title="Permanent link">&para;</a></h3>
+<p>A impenhorabilidade do bem de família instituída pela Lei nº 8.009/1990 é matéria de ordem pública cognoscível de ofício, mas encontra exceções legais rígidas no seu art. 3º: débitos decorrentes do próprio financiamento imobiliário, débitos de IPTU ou taxa condominial do próprio bem, e execução de dívida de pensão alimentícia. Não disperse recursos investigativos tentando penhorar o único imóvel residencial modesto do devedor em execuções de dívidas comuns; direcione o esforço para imóveis locados a terceiros, terrenos baldios, casas de campo ou bens adquiridos em fraude manifesta.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

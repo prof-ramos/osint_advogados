@@ -1,0 +1,2786 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manual prático, juridicamente rigoroso e tecnicamente operacional de inteligência em fontes abertas no Direito brasileiro.">
+      
+      
+        <meta name="author" content="Prof. Gabriel Ramos">
+      
+      
+      
+        <link rel="prev" href="../cap_19_direito_familia_execucao_alimentos/">
+      
+      
+        <link rel="next" href="../cap_21_due_diligence_compliance_risco/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap. 20 - Crimes Cibernéticos e Atribuição - OSINT Aplicado ao Direito Brasileiro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-20-ilicitos-ciberneticos-e-crimes-contra-a-honra-atribuicao-osint-vs-requisitos-judiciais-do-marco-civil" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-header__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Aplicado ao Direito Brasileiro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap. 20 - Crimes Cibernéticos e Atribuição
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../00_sumario_e_apresentacao/" class="md-tabs__link">
+          
+  
+  
+  O Manual (Livro)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-tabs__link">
+          
+  
+  
+  Casos Práticos Forenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-tabs__link">
+          
+  
+  
+  Base Dinâmica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-tabs__link">
+          
+  
+  
+  Dataset OSINT Brazuca
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-tabs__link">
+          
+  
+  
+  Curso de 72h
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-tabs__link">
+          
+  
+  
+  Governança e ADRs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-nav__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Aplicado ao Direito Brasileiro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O Manual (Livro)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    O Manual (Livro)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_sumario_e_apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_01_investigacao_osint_direito_brasileiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 01 - OSINT no Direito Brasileiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_02_regime_juridico_lgpd_lai_marco_civil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 02 - Regime Jurídico (LGPD, LAI e MCI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_03_investigacao_defensiva_provimento_188/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 03 - Investigação Defensiva (Prov. 188)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_04_prova_digital_cadeia_custodia_mesmidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 04 - Prova Digital e Cadeia de Custódia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_05_ciclo_investigativo_10_etapas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 05 - O Ciclo Investigativo em 10 Etapas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_06_separacao_epistemologica_fato_inferencia_hipotese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 06 - Separação Epistemológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_07_sistema_matriz_evidencias_relatorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 07 - Sistema da Matriz de Evidências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_08_pesquisa_web_avancada_dorking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 08 - Pesquisa Web Avançada e Dorking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_09_investigacao_identidade_pessoas_naturais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 09 - Identidade de Pessoas Naturais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_10_investigacao_societaria_pessoas_juridicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 10 - Investigação Societária (PJs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_11_analise_documental_metadados_arquivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 11 - Análise Documental e Metadados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_12_redes_sociais_atribuicao_comportamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 12 - Redes Sociais e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_13_imagens_videos_geolocalizacao_satelite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 13 - Imagens, Vídeos e Geolocalização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_14_web_historica_infraestrutura_digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 14 - Web Histórica e Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_15_analise_vinculos_grafos_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 15 - Grafos e Análise de Vínculos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 4 - Aplicações Práticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 4 - Aplicações Práticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_16_localizacao_devedores_execucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 16 - Localização de Devedores na Execução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_17_investigacao_patrimonial_rastreamento_bens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 17 - Rastreamento Patrimonial e Ativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_18_fraude_contra_credores_ocultacao_patrimonial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 18 - Fraude a Credores e Ocultação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_19_direito_familia_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 19 - Família e Execução de Alimentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 20 - Crimes Cibernéticos e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 20 - Crimes Cibernéticos e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-ilusao-do-anonimato-e-os-desafios-da-persecucao-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. A Ilusão do Anonimato e os Desafios da Persecução Digital
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-o-regime-juridico-de-guarda-e-sigilo-no-marco-civil-da-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. O Regime Jurídico de Guarda e Sigilo no Marco Civil da Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-os-requisitos-legais-inegociaveis-do-pedido-judicial-art-22-do-mci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Os Requisitos Legais Inegociáveis do Pedido Judicial (Art. 22 do MCI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-o-papel-crucial-da-porta-logica-de-origem-na-era-do-ipv4-cgnat-e-a-tese-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. O Papel Crucial da Porta Lógica de Origem na Era do IPv4 (CGNAT) e a Tese do STJ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cadeia-de-custodia-em-aplicativos-de-mensagens-whatsapp-e-o-precedente-rhc-99735sc-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cadeia de Custódia em Aplicativos de Mensagens (WhatsApp) e o Precedente RHC 99.735/SC do STJ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cadeia de Custódia em Aplicativos de Mensagens (WhatsApp) e o Precedente RHC 99.735/SC do STJ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-a-fragilidade-intrinseca-dos-prints-de-tela-screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. A Fragilidade Intrínseca dos Prints de Tela (Screenshots)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-o-precedente-paradigmatico-do-stj-rhc-99735sc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. O Precedente Paradigmático do STJ: RHC 99.735/SC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-a-aplicacao-das-regras-de-cadeia-de-custodia-cpp-e-cpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. A Aplicação das Regras de Cadeia de Custódia (CPP e CPC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-obrigacao-de-fornecimento-de-porta-logica-em-conexoes-cgnat-stj-resp-1784156sp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Obrigação de Fornecimento de Porta Lógica em Conexões CGNAT (STJ REsp 1.784.156/SP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-cadeia-de-custodia-em-conversas-de-whatsapp-e-nulidade-de-prints-stj-rhc-99735sc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Cadeia de Custódia em Conversas de WhatsApp e Nulidade de Prints (STJ RHC 99.735/SC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-a-vedacao-do-art-19-1o-url-especifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: A Vedação do Art. 19, § 1º (URL Específica)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medida-judicial-o-pedido-de-preservacao-cautelar-previa-art-15-3o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ Medida Judicial: O Pedido de Preservação Cautelar Prévia (Art. 15, § 3º)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-a-conferencia-do-fuso-horario-oficial-utc-vs-horario-de-brasilia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Verificação: A Conferência do Fuso Horário Oficial (UTC vs. Horário de Brasília)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_21_due_diligence_compliance_risco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 21 - Due Diligence e Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_22_quando_osint_e_insuficiente_medidas_judiciais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 22 - Medidas Judiciais e SNIPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 5 - Casos e Exercícios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 5 - Casos e Exercícios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 23 - Estudos de Caso Guiados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_24_laboratorio_integrado_simulacao_contraditorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 24 - Simulação em Contraditório
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos Práticos Forenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos Práticos Forenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 01 - Localização de Devedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_02_devedor_aparentemente_insolvente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 02 - Insolvência e Blindagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_03_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 03 - Alimentos e Sinais de Riqueza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_04_perfil_anonimo_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 04 - Perfil Anônimo em Redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_05_publicacao_apagada_preservacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 05 - Publicação Apagada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_06_empresa_suspeita_societario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 06 - Empresa Suspeita / Noteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_07_caso_integrado_completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 07 - Desafio Integrado Multivetorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Base Dinâmica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Portais e Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/checklist_verificacao_links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist Trimestral de Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset OSINT Brazuca
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dataset OSINT Brazuca
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento de Fontes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/protocolo_validacao_fontes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo de Admissão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso de 72h
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso de 72h
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Banco de Questões Comentadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governança e ADRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governança e ADRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001 - Livro Perene vs Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-ilusao-do-anonimato-e-os-desafios-da-persecucao-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. A Ilusão do Anonimato e os Desafios da Persecução Digital
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-o-regime-juridico-de-guarda-e-sigilo-no-marco-civil-da-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. O Regime Jurídico de Guarda e Sigilo no Marco Civil da Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-os-requisitos-legais-inegociaveis-do-pedido-judicial-art-22-do-mci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Os Requisitos Legais Inegociáveis do Pedido Judicial (Art. 22 do MCI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-o-papel-crucial-da-porta-logica-de-origem-na-era-do-ipv4-cgnat-e-a-tese-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. O Papel Crucial da Porta Lógica de Origem na Era do IPv4 (CGNAT) e a Tese do STJ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cadeia-de-custodia-em-aplicativos-de-mensagens-whatsapp-e-o-precedente-rhc-99735sc-do-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cadeia de Custódia em Aplicativos de Mensagens (WhatsApp) e o Precedente RHC 99.735/SC do STJ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cadeia de Custódia em Aplicativos de Mensagens (WhatsApp) e o Precedente RHC 99.735/SC do STJ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-a-fragilidade-intrinseca-dos-prints-de-tela-screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. A Fragilidade Intrínseca dos Prints de Tela (Screenshots)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-o-precedente-paradigmatico-do-stj-rhc-99735sc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. O Precedente Paradigmático do STJ: RHC 99.735/SC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-a-aplicacao-das-regras-de-cadeia-de-custodia-cpp-e-cpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. A Aplicação das Regras de Cadeia de Custódia (CPP e CPC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-obrigacao-de-fornecimento-de-porta-logica-em-conexoes-cgnat-stj-resp-1784156sp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Obrigação de Fornecimento de Porta Lógica em Conexões CGNAT (STJ REsp 1.784.156/SP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-cadeia-de-custodia-em-conversas-de-whatsapp-e-nulidade-de-prints-stj-rhc-99735sc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: Cadeia de Custódia em Conversas de WhatsApp e Nulidade de Prints (STJ RHC 99.735/SC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-a-vedacao-do-art-19-1o-url-especifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: A Vedação do Art. 19, § 1º (URL Específica)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medida-judicial-o-pedido-de-preservacao-cautelar-previa-art-15-3o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ Medida Judicial: O Pedido de Preservação Cautelar Prévia (Art. 15, § 3º)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-a-conferencia-do-fuso-horario-oficial-utc-vs-horario-de-brasilia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Verificação: A Conferência do Fuso Horário Oficial (UTC vs. Horário de Brasília)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="capitulo-20-ilicitos-ciberneticos-e-crimes-contra-a-honra-atribuicao-osint-vs-requisitos-judiciais-do-marco-civil">Capítulo 20: Ilícitos Cibernéticos e Crimes Contra a Honra: Atribuição OSINT vs. Requisitos Judiciais do Marco Civil<a class="headerlink" href="#capitulo-20-ilicitos-ciberneticos-e-crimes-contra-a-honra-atribuicao-osint-vs-requisitos-judiciais-do-marco-civil" title="Permanent link">&para;</a></h1>
+<h2 id="1-a-ilusao-do-anonimato-e-os-desafios-da-persecucao-digital">1. A Ilusão do Anonimato e os Desafios da Persecução Digital<a class="headerlink" href="#1-a-ilusao-do-anonimato-e-os-desafios-da-persecucao-digital" title="Permanent link">&para;</a></h2>
+<p>A disseminação de perfis apócrifos (<em>fakes</em>) e o uso de redes sociais e mensageiros instantâneos para a prática de crimes contra a honra (calúnia, difamação, injúria - arts. 138 a 140 do CP), perseguição continuada (<em>stalking</em> - art. 147-A do CP) e concorrência desleal (Lei nº 9.279/96) fomentam a falsa crença de que a internet brasileira opera em regime de anonimato absoluto.</p>
+<p>Para a advocacia de vítimas de ilícitos cibernéticos, o maior perigo reside na precipitação investigativa: apontar a autoria de uma infração com esteio exclusivo em indícios preliminares coligidos em fontes abertas (como a semelhança de pseudônimos, fotografias genéricas de banco de imagens ou final de número de telefone celular em cadastros de recuperação) expõe o constituinte e o próprio advogado a graves repercussões jurídicas, tais como <strong>ações de indenização por danos morais e persecução penal por denunciação caluniosa (art. 339 do CP)</strong>.</p>
+<p>A atuação jurídica estratégica e ética exige a integração metódica entre duas fases complementares e inconfundíveis:
+1. <strong>Fase Extrajudicial (OSINT)</strong>: Coleta técnica imediata e preservação da materialidade do ilícito (URLs, metadados, espelhamentos, código-fonte e hashes de integridade), servindo para subsidiar a elaboração de hipóteses investigativas sólidas;
+2. <strong>Fase Judicial Coercitiva (Marco Civil da Internet)</strong>: Instauração de procedimento jurisdicional sob a égide da Lei nº 12.965/2014 para a quebra legal de sigilo telemático, obtenção dos registros de acesso e requisição pericial do assinante perante as concessionárias de telecomunicações.</p>
+<hr />
+<h2 id="2-o-regime-juridico-de-guarda-e-sigilo-no-marco-civil-da-internet">2. O Regime Jurídico de Guarda e Sigilo no Marco Civil da Internet<a class="headerlink" href="#2-o-regime-juridico-de-guarda-e-sigilo-no-marco-civil-da-internet" title="Permanent link">&para;</a></h2>
+<p>A Constituição Federal de 1988 veda terminantemente o anonimato (art. 5º, IV) e tutela a inviolabilidade da intimidade, da vida privada e do sigilo das comunicações (art. 5º, X e XII). O Marco Civil da Internet (Lei nº 12.965/2014) positivou a arquitetura jurídica de salvaguarda desses valores, estruturando regras claras para os agentes de rede:</p>
+<ul>
+<li><strong>Art. 10</strong>: Consagra a <strong>inviolabilidade e o sigilo do fluxo das comunicações pela internet</strong> e dos registros de conexão e de acesso a aplicações. A disponibilização desses registros somente pode ocorrer mediante <strong>expressa ordem judicial</strong>, sob pena de responsabilização civil, criminal e administrativa dos provedores;</li>
+<li><strong>Art. 15</strong>: Impõe aos provedores de aplicação de internet (redes sociais, plataformas de e-mail, mensageiros) o <strong>dever legal de guarda dos registros de acesso pelo prazo mínimo de 6 (seis) meses</strong>, em ambiente controlado e sob rigoroso sigilo. Além disso, o <strong>art. 15, § 3º</strong>, disciplina a <strong>tutela cautelar de preservação prévia</strong>: havendo iminência de decurso do prazo semestral, a parte juridicamente interessada ou autoridade competente pode postular ao juízo a ordem cautelar imediata de congelamento dos logs, evitando o perecimento probatório definitivo;</li>
+<li><strong>Distinção Dogmática entre Dados Cadastrais e Registros Telemáticos (STJ REsp 1.566.444/SP)</strong>: A 3ª Turma do Superior Tribunal de Justiça (Rel. Min. Moura Ribeiro, j. 08/03/2016, DJe 15/03/2016) demarcou a fronteira jurídica entre os dados meramente cadastrais do usuário e os registros telemáticos de navegação. Enquanto os <strong>dados cadastrais</strong> (nome completo, estado civil, filiação, endereço residencial e CPF) qualificam a pessoa na vida civil e não demandam reserva absoluta de jurisdição probatória quando regulamentados em legislação setorial específica, os <strong>registros de conexão e de acesso a aplicações</strong> (IPs, portas lógicas, datas e horários de tráfego) refletem a privacidade e a intimidade comportamental do usuário, exigindo <strong>estrita e fundamentada ordem judicial para sua quebra</strong>, nos termos dos arts. 10 e 22 do Marco Civil.</li>
+</ul>
+<p>O fluxo de individualização do ofensor cibernético estrutura-se no seguinte procedimento bifásico:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Advogado as Advogado da Vítima
+    participant Juiz as Poder Judiciário
+    participant ProvedorApp as Provedor de Aplicação (ex.: Instagram / Google)
+    participant ProvedorCon as Provedor de Conexão (ex.: Claro / Vivo)
+    participant Autor as Autor Físico do Ilícito
+
+    Advogado-&gt;&gt;Juiz: Ação Cautelar (Art. 22 MCI) + URL exata + Pedido de Preservação
+    Juiz-&gt;&gt;ProvedorApp: Ordem: Fornecer Registros de Acesso (IP + Porta Lógica + Data/Hora UTC)
+    ProvedorApp--&gt;&gt;Juiz: Fornece IP: 177.18.29.10 | Porta: 54321 | 2026-09-08 14:22:15 UTC
+    Juiz-&gt;&gt;ProvedorCon: Ordem: Identificar Assinante da Conexão naquele segundo e porta lógica
+    ProvedorCon--&gt;&gt;Juiz: Assinante: Maria Silva | Endereço: Rua X, 100 | CPF: 123.456.789-00
+    Juiz-&gt;&gt;Advogado: Disponibiliza autos para ajuizamento da Queixa-Crime / Ação Indenizatória</code></pre>
+<hr />
+<h2 id="3-os-requisitos-legais-inegociaveis-do-pedido-judicial-art-22-do-mci">3. Os Requisitos Legais Inegociáveis do Pedido Judicial (Art. 22 do MCI)<a class="headerlink" href="#3-os-requisitos-legais-inegociaveis-do-pedido-judicial-art-22-do-mci" title="Permanent link">&para;</a></h2>
+<p>Para coibir aventuras processuais e buscas indiscriminadas de dados informáticos (<em>fishing expeditions</em>), o art. 22, parágrafo único, do Marco Civil da Internet estipula três pressupostos cumulativos que vinculam a admissibilidade da ordem judicial de exibição de registros:</p>
+<ol>
+<li><strong>Fundados Indícios da Ocorrência do Ilícito (Inciso I)</strong>: O requerente deve anexar aos autos elementos de convicção materiais prévios — materializados em relatórios técnicos de investigação OSINT, arquivos preservados com integridade comprovada ou atas notariais circunstanciadas — atestando a prática de ato ilícito indenizável ou crime contra a honra;</li>
+<li><strong>Justificativa Motivada da Utilidade dos Registros Solicitados (Inciso II)</strong>: Demonstração clara e articulada de que a quebra do sigilo dos endereços IP e das portas lógicas de conexão é medida estritamente necessária, útil e indispensável para a identificação da autoria lesiva, inexistindo meio alternativo menos gravoso;</li>
+<li><strong>Período ao Qual se Referem os Registros (Inciso III)</strong>: <strong>Requisito da delimitação temporal estrita</strong>. É expressamente vedado o requerimento de ordem genérica para fornecimento de "todos os IPs utilizados pela conta desde a sua criação". O pedido deve balizar estritamente o dia, a hora e o intervalo temporal correspondente à prática dos atos lesivos ou postagens sob litígio, sob pena de violação à privacidade e indeferimento de plano.</li>
+</ol>
+<hr />
+<h2 id="4-o-papel-crucial-da-porta-logica-de-origem-na-era-do-ipv4-cgnat-e-a-tese-do-stj">4. O Papel Crucial da Porta Lógica de Origem na Era do IPv4 (CGNAT) e a Tese do STJ<a class="headerlink" href="#4-o-papel-crucial-da-porta-logica-de-origem-na-era-do-ipv4-cgnat-e-a-tese-do-stj" title="Permanent link">&para;</a></h2>
+<p>Com o esgotamento mundial do protocolo IPv4 (endereçamento de 32 bits) e a transição gradual para o IPv6 (128 bits), as operadoras de telecomunicações no Brasil implementaram massivamente a arquitetura tecnológica de <strong>CGNAT (Carrier-Grade Network Address Translation)</strong>.</p>
+<p>Sob o mecanismo de CGNAT, as prestadoras de serviços de conexão de internet compartilham um <strong>único endereço IPv4 público entre dezenas ou centenas de usuários residenciais e móveis simultâneos</strong>, distinguindo cada um desses assinantes apenas pela <strong>porta lógica de origem (Source Port)</strong> utilizada em cada requisição de pacote de dados.</p>
+<p>Diante dessa realidade técnica, a jurisprudência brasileira fixou um paradigma decisivo no julgamento do <strong>STJ REsp 1.784.156/SP</strong> (3ª Turma, Rel. Min. Marco Aurélio Bellizze, j. 27/08/2019, DJe 30/08/2019):
+- <strong>A Tese da Obrigatoriedade de Fornecimento da Porta Lógica</strong>: A Corte Superior pacificou que os provedores de aplicação de internet têm a <strong>obrigação jurídica de armazenar e fornecer aos juízos não apenas o endereço IP, data e hora da conexão, mas também a respectiva porta lógica de origem</strong>;
+- <strong>Consequência Prática</strong>: O fornecimento exclusivo do endereço IP pelo provedor de aplicação (como Instagram, Facebook ou Google) inviabiliza tecnicamente a identificação unívoca do usuário pela operadora de conexão, haja vista que a operadora atestará a impossibilidade de individualizar qual de seus 500 assinantes realizou a postagem criminosa naquele exato segundo sem o dado da porta lógica. Portanto, a ordem judicial e o requerimento inicial do advogado devem exigir peremptoriamente a tríade: <strong>Endereço IP + Porta Lógica de Origem + Data, Hora e Fuso Horário de Referência UTC</strong>.</p>
+<hr />
+<h2 id="5-cadeia-de-custodia-em-aplicativos-de-mensagens-whatsapp-e-o-precedente-rhc-99735sc-do-stj">5. Cadeia de Custódia em Aplicativos de Mensagens (WhatsApp) e o Precedente RHC 99.735/SC do STJ<a class="headerlink" href="#5-cadeia-de-custodia-em-aplicativos-de-mensagens-whatsapp-e-o-precedente-rhc-99735sc-do-stj" title="Permanent link">&para;</a></h2>
+<p>O uso generalizado de mensageiros instantâneos (WhatsApp, Telegram, Signal) nas relações civis e empresariais transformou essas plataformas no principal palco de produção de vestígios digitais. Paralelamente, instaurou-se nos tribunais intenso debate sobre a higidez e a admissibilidade probatória de conversas eletrônicas.</p>
+<h3 id="51-a-fragilidade-intrinseca-dos-prints-de-tela-screenshots">5.1. A Fragilidade Intrínseca dos Prints de Tela (<em>Screenshots</em>)<a class="headerlink" href="#51-a-fragilidade-intrinseca-dos-prints-de-tela-screenshots" title="Permanent link">&para;</a></h3>
+<p>A praxe informal de capturar telas do celular (<em>printscreens</em>) e encartá-las em petições iniciais revela profunda fragilidade técnica e vulnerabilidade jurídica:
+- O aplicativo WhatsApp permite a <strong>exclusão unilateral de mensagens</strong> a qualquer tempo ("apagar para todos" dentro da janela autorizada ou "apagar para mim" a qualquer instante no dispositivo ou via WhatsApp Web), sem que tal ato deixe rastro identificável na imagem de tela gerada pelo interlocutor;
+- Existem na atualidade dezenas de ferramentas web e aplicativos gratuitos que geram interfaces falsas e simuladas com perfeita reprodução gráfica de conversas, incluindo foto de perfil, balões de texto, horários e ícones de confirmação de entrega;
+- A mera imagem estática não possui metadados de cabeçalho, logs de tráfego de rede ou garantia de integridade criptográfica.</p>
+<h3 id="52-o-precedente-paradigmatico-do-stj-rhc-99735sc">5.2. O Precedente Paradigmático do STJ: RHC 99.735/SC<a class="headerlink" href="#52-o-precedente-paradigmatico-do-stj-rhc-99735sc" title="Permanent link">&para;</a></h3>
+<p>Diante dessa suscetibilidade à manipulação, a 6ª Turma do Superior Tribunal de Justiça, no julgamento histórico do <strong>RHC 99.735/SC</strong> (Rel. Min. Nefi Cordeiro, j. 27/11/2018, DJe 04/12/2018), assentou a <strong>ilicitude e imprestabilidade probatória de conversas de WhatsApp</strong> obtidas por mero espelhamento via WhatsApp Web ou capturas de tela desprovidas de preservação pericial e verificação de integridade:</p>
+<blockquote>
+<p><em>"É ilícita a prova obtida mediante espelhamento de conversas do aplicativo WhatsApp (via WhatsApp Web) ou por simples capturas de tela desprovidas de procedimento pericial de verificação e integridade, ante a vulnerabilidade da plataforma que permite o envio, a exclusão unilateral e a edição de mensagens sem deixar vestígios. A validação de diálogos telemáticos exige estrita observância da cadeia de custódia e garantia da integridade probatória."</em> (STJ, RHC 99.735/SC).</p>
+</blockquote>
+<h3 id="53-a-aplicacao-das-regras-de-cadeia-de-custodia-cpp-e-cpc">5.3. A Aplicação das Regras de Cadeia de Custódia (CPP e CPC)<a class="headerlink" href="#53-a-aplicacao-das-regras-de-cadeia-de-custodia-cpp-e-cpc" title="Permanent link">&para;</a></h3>
+<p>A preservação idônea de diálogos telemáticos exige a incidência das normas de cadeia de custódia instituídas pelo Pacote Anticrime (CPP, arts. 158-A a 158-F) e aplicadas subsidiariamente ao processo civil (CPC, arts. 369 e 411):
+1. <strong>Garantia da Mesmidade</strong>: O vestígio digital apresentado perante o juízo deve ser demonstrado como rigorosamente idêntico ao extraído da fonte original;
+2. <strong>Procedimentos Técnicos Recomendados</strong>:
+   - Lavratura de <strong>ata notarial circunstanciada</strong> com inspeção direta do dispositivo físico original pelo tabelião, descrevendo o aparelho, número da linha, conexão e histórico ininterrupto;
+   - Realização de <strong>extração pericial forense</strong> em formato de arquivo completo, gerando arquivo de dados e relatório acompanhado de cálculo de <strong>hash criptográfico SHA-256 de 64 caracteres hexadecimais</strong> no momento da extração;
+   - Registro de data e horário com identificação expressa do fuso oficial de referência (<code>BRT</code> ou <code>UTC-3</code>).</p>
+<hr />
+<h2 id="6-boxes-metodologicos-e-jurisprudencia-aplicada">6. Boxes Metodológicos e Jurisprudência Aplicada<a class="headerlink" href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-obrigacao-de-fornecimento-de-porta-logica-em-conexoes-cgnat-stj-resp-1784156sp">⚖️ Validade Jurídica e Jurisprudência: Obrigação de Fornecimento de Porta Lógica em Conexões CGNAT (STJ REsp 1.784.156/SP)<a class="headerlink" href="#validade-juridica-e-jurisprudencia-obrigacao-de-fornecimento-de-porta-logica-em-conexoes-cgnat-stj-resp-1784156sp" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - 3ª Turma
+- <strong>Recurso</strong>: REsp 1.784.156/SP
+- <strong>Relator</strong>: Ministro Marco Aurélio Bellizze
+- <strong>Data de Julgamento</strong>: 27/08/2019 | Publicação no DJe: 30/08/2019
+- <strong>Tese Fixada / Ementa Síntese</strong>:</p>
+<blockquote>
+<p><em>"A identificação de usuário de serviço de internet sob a tecnologia CGNAT (IPv4 compartilhado) exige, necessariamente, o fornecimento pelo provedor de aplicação não apenas do endereço IP, data e hora da conexão, mas também da porta lógica de origem. O provedor de aplicação que deixa de armazenar ou fornecer a porta lógica descumpre o dever legal de guarda e colaboração processual do Marco Civil da Internet (art. 15 e 22), inviabilizando a identificação da conexão unívoca pela operadora de telecomunicações."</em></p>
+</blockquote>
+<p><strong>Modelo de Parágrafo para Petição (Ordem Judicial Liminar de Quebra de Sigilo):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>"Com fulcro nos arts. 10, 15 e 22 da Lei nº 12.965/2014 (Marco Civil da Internet) e em estrita consonância com a tese fixada pela Terceira Turma do Superior Tribunal de Justiça no REsp 1.784.156/SP, requer-se a expedição de ordem judicial liminar determinando ao provedor de aplicação que forneça, no prazo improrrogável de 5 (cinco) dias, os registros eletrônicos de acesso à aplicação referentes às URLs ofensivas individualizadas no relatório em anexo (EVD-001 a EVD-003), compreendendo obrigatoriamente: (i) os endereços de protocolo de internet (IP) de origem; (ii) as respectivas portas lógicas de origem das conexões utilizadas para a postagem e criação do perfil; e (iii) os registros de data, hora e fuso horário de referência UTC. Ressalta-se a imprescindibilidade técnica da ordem expressa de fornecimento da porta lógica de origem, dado que, em face da vigência da tecnologia CGNAT na infraestrutura de telecomunicações nacional, a mera disponibilização do IP desprovido da respectiva porta lógica inviabiliza a identificação unívoca do assinante perante o provedor de conexão, frustrando a eficácia da tutela jurisdicional."
+</code></pre></div></p>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-cadeia-de-custodia-em-conversas-de-whatsapp-e-nulidade-de-prints-stj-rhc-99735sc">⚖️ Validade Jurídica e Jurisprudência: Cadeia de Custódia em Conversas de WhatsApp e Nulidade de Prints (STJ RHC 99.735/SC)<a class="headerlink" href="#validade-juridica-e-jurisprudencia-cadeia-de-custodia-em-conversas-de-whatsapp-e-nulidade-de-prints-stj-rhc-99735sc" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - 6ª Turma
+- <strong>Recurso</strong>: RHC 99.735/SC
+- <strong>Relator</strong>: Ministro Nefi Cordeiro
+- <strong>Data de Julgamento</strong>: 27/11/2018 | Publicação no DJe: 04/12/2018
+- <strong>Tese Fixada / Ementa Síntese</strong>:</p>
+<blockquote>
+<p><em>"É ilícita a prova obtida mediante espelhamento de conversas do aplicativo WhatsApp (via WhatsApp Web) ou por simples capturas de tela desprovidas de procedimento pericial de verificação e integridade, ante a vulnerabilidade da plataforma que permite o envio, a exclusão unilateral e a edição de mensagens sem deixar vestígios. A validação de diálogos telemáticos exige estrita observância da cadeia de custódia e garantia da integridade probatória."</em></p>
+</blockquote>
+<p><strong>Modelo de Parágrafo para Petição (Impugnação de Provas Telemáticas Apócrifas):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"Impugna-se a juntada dos pretensos diálogos de aplicativo acostados pelo autor, consistentes em meras capturas de tela ('printscreens') desprovidas de qualquer procedimento técnico de autenticação ou preservação forense. Conforme pacificado pelo Superior Tribunal de Justiça no julgamento do RHC 99.735/SC (Rel. Min. Nefi Cordeiro), meras imagens de telas de WhatsApp revelam-se juridicamente imprestáveis e nulas como elemento de convicção em virtude da flagrante quebra da cadeia de custódia, haja vista a viabilidade operacional de exclusão e adulteração unilateral de textos e mídias sem vestígios perceptíveis em cópias estáticas. Ausente a ata notarial circunstanciada com verificação do dispositivo físico ou a extração forense acompanhada de código hash SHA-256 e arquivos metadados, requer-se o imediato desentranhamento dos referidos documentos digitais apócrifos, nos termos dos arts. 369 e 411 do CPC."
+</code></pre></div></p>
+<p>[!WARNING]</p>
+<h3 id="limite-juridico-a-vedacao-do-art-19-1o-url-especifica">⚖️ Limite Jurídico: A Vedação do Art. 19, § 1º (URL Específica)<a class="headerlink" href="#limite-juridico-a-vedacao-do-art-19-1o-url-especifica" title="Permanent link">&para;</a></h3>
+<p>O Superior Tribunal de Justiça (STJ) firmou jurisprudência vinculante no sentido de que a ordem de remoção de conteúdo ilícito na internet <strong>deve conter a URL específica (<em>link direto</em>) da publicação ofensiva</strong>. Não basta indicar o nome do canal ou o perfil geral da empresa ofensora. A indicação genérica torna a ordem judicial inexequível perante o provedor de aplicação.</p>
+<p>[!IMPORTANT]</p>
+<h3 id="medida-judicial-o-pedido-de-preservacao-cautelar-previa-art-15-3o">🏛️ Medida Judicial: O Pedido de Preservação Cautelar Prévia (Art. 15, § 3º)<a class="headerlink" href="#medida-judicial-o-pedido-de-preservacao-cautelar-previa-art-15-3o" title="Permanent link">&para;</a></h3>
+<p>As redes sociais e aplicações de internet são obrigadas por lei a guardar os registros de acesso pelo prazo de apenas <strong>6 meses</strong> (art. 15 do MCI). Como o trâmite de uma ação judicial pode ultrapassar esse prazo, o advogado da vítima deve formular requerimento urgente ao juiz (ou notificação formal ao provedor com pedido de guarda provisória) para que os registros sejam congelados e não eliminados por decurso de prazo.</p>
+<p>[!NOTE]</p>
+<h3 id="verificacao-a-conferencia-do-fuso-horario-oficial-utc-vs-horario-de-brasilia">🧪 Verificação: A Conferência do Fuso Horário Oficial (UTC vs. Horário de Brasília)<a class="headerlink" href="#verificacao-a-conferencia-do-fuso-horario-oficial-utc-vs-horario-de-brasilia" title="Permanent link">&para;</a></h3>
+<p>Todos os servidores mundiais de redes sociais operam sob o padrão de tempo universal coordenado (<strong>UTC</strong> - <em>Universal Time Coordinated</em>). O horário de Brasília (BRT) opera com defasagem de 3 horas em relação ao UTC (UTC-3). Ao cruzar os logs fornecidos pelo provedor com os registros da operadora de telecomunicações, certifique-se de converter os fusos horários com exatidão matemática, sob pena de apontar um assinante inocente que estava navegando 3 horas antes ou depois do fato.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

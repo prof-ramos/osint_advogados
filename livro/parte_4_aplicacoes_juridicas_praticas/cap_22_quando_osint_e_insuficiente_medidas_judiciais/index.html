@@ -1,0 +1,3045 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Manual prático, juridicamente rigoroso e tecnicamente operacional de inteligência em fontes abertas no Direito brasileiro.">
+      
+      
+        <meta name="author" content="Prof. Gabriel Ramos">
+      
+      
+      
+        <link rel="prev" href="../cap_21_due_diligence_compliance_risco/">
+      
+      
+        <link rel="next" href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap. 22 - Medidas Judiciais e SNIPER - OSINT Aplicado ao Direito Brasileiro</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-22-quando-o-osint-nao-basta-o-ponto-de-transicao-para-medidas-judiciais-tipicas-e-atipicas" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-header__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Aplicado ao Direito Brasileiro
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap. 22 - Medidas Judiciais e SNIPER
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../00_sumario_e_apresentacao/" class="md-tabs__link">
+          
+  
+  
+  O Manual (Livro)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-tabs__link">
+          
+  
+  
+  Casos Práticos Forenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-tabs__link">
+          
+  
+  
+  Base Dinâmica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-tabs__link">
+          
+  
+  
+  Dataset OSINT Brazuca
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-tabs__link">
+          
+  
+  
+  Curso de 72h
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-tabs__link">
+          
+  
+  
+  Governança e ADRs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSINT Aplicado ao Direito Brasileiro" class="md-nav__button md-logo" aria-label="OSINT Aplicado ao Direito Brasileiro" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Aplicado ao Direito Brasileiro
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prof-ramos/osint_advogados" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prof-ramos/osint_advogados
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O Manual (Livro)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    O Manual (Livro)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_sumario_e_apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 1 - Fundamentos e Regime Jurídico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_01_investigacao_osint_direito_brasileiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 01 - OSINT no Direito Brasileiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_02_regime_juridico_lgpd_lai_marco_civil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 02 - Regime Jurídico (LGPD, LAI e MCI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_03_investigacao_defensiva_provimento_188/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 03 - Investigação Defensiva (Prov. 188)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_1_fundamentos_e_regime_juridico/cap_04_prova_digital_cadeia_custodia_mesmidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 04 - Prova Digital e Cadeia de Custódia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 2 - Metodologia e Evidências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_05_ciclo_investigativo_10_etapas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 05 - O Ciclo Investigativo em 10 Etapas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_06_separacao_epistemologica_fato_inferencia_hipotese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 06 - Separação Epistemológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_2_metodologia_investigativa_e_evidencias/cap_07_sistema_matriz_evidencias_relatorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 07 - Sistema da Matriz de Evidências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 3 - Técnicas e Pivoteamento
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_08_pesquisa_web_avancada_dorking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 08 - Pesquisa Web Avançada e Dorking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_09_investigacao_identidade_pessoas_naturais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 09 - Identidade de Pessoas Naturais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_10_investigacao_societaria_pessoas_juridicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 10 - Investigação Societária (PJs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_11_analise_documental_metadados_arquivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 11 - Análise Documental e Metadados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_12_redes_sociais_atribuicao_comportamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 12 - Redes Sociais e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_13_imagens_videos_geolocalizacao_satelite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 13 - Imagens, Vídeos e Geolocalização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_14_web_historica_infraestrutura_digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 14 - Web Histórica e Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_3_tecnicas_operacionais_e_pivoteamento/cap_15_analise_vinculos_grafos_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 15 - Grafos e Análise de Vínculos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 4 - Aplicações Práticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 4 - Aplicações Práticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_16_localizacao_devedores_execucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 16 - Localização de Devedores na Execução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_17_investigacao_patrimonial_rastreamento_bens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 17 - Rastreamento Patrimonial e Ativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_18_fraude_contra_credores_ocultacao_patrimonial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 18 - Fraude a Credores e Ocultação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_19_direito_familia_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 19 - Família e Execução de Alimentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_20_ilicitos_ciberneticos_atribuicao_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 20 - Crimes Cibernéticos e Atribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap_21_due_diligence_compliance_risco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 21 - Due Diligence e Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 22 - Medidas Judiciais e SNIPER
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 22 - Medidas Judiciais e SNIPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-ponto-de-saturacao-da-investigacao-em-fontes-abertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. O Ponto de Saturação da Investigação em Fontes Abertas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-producao-antecipada-de-provas-art-381-do-cpc-e-a-preservacao-de-evidencias-digitais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Produção Antecipada de Provas (Art. 381 do CPC) e a Preservação de Evidências Digitais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Produção Antecipada de Provas (Art. 381 do CPC) e a Preservação de Evidências Digitais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-autonomia-do-direito-a-prova-e-a-vedacao-de-valoracao-de-merito-no-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Autonomia do Direito à Prova e a Vedação de Valoração de Mérito no STJ:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tutela-cautelar-antecedente-arts-300-e-305-do-cpc-arresto-e-busca-e-apreensao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Tutela Cautelar Antecedente (Arts. 300 e 305 do CPC): Arresto e Busca e Apreensão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tutela Cautelar Antecedente (Arts. 300 e 305 do CPC): Arresto e Busca e Apreensão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-requisitos-indissociaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Requisitos Indissociáveis:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-medidas-cautelares-assecuratorias-tipicas-e-atipicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Medidas Cautelares Assecuratórias Típicas e Atípicas:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-dinamica-procedimental-da-tutela-antecedente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Dinâmica Procedimental da Tutela Antecedente:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sistemas-restritos-do-judiciario-e-o-principio-da-cooperacao-processual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sistemas Restritos do Judiciário e o Princípio da Cooperação Processual
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sistemas Restritos do Judiciário e o Princípio da Cooperação Processual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-sniper-sistema-nacional-de-investigacao-patrimonial-e-recuperacao-de-ativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. SNIPER (Sistema Nacional de Investigação Patrimonial e Recuperação de Ativos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-sisbajud-e-o-modulo-de-repeticao-programada-teimosinha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. SISBAJUD e o Módulo de Repetição Programada ("Teimosinha")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-infojud-e-a-declaracao-de-operacoes-imobiliarias-doi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. INFOJUD e a Declaração de Operações Imobiliárias (DOI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-renajud-restricoes-veiculares-graduadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. RENAJUD: Restrições Veiculares Graduadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-censec-central-notarial-de-servicos-eletronicos-compartilhados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. CENSEC (Central Notarial de Serviços Eletrônicos Compartilhados)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-serasajud-negativacao-coercitiva-nos-biros-de-credito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. SERASAJUD: Negativação Coercitiva nos Birôs de Crédito
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-o-dever-de-cooperacao-processual-e-judiciaria-cpc-arts-6o-e-67-a-69" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. O Dever de Cooperação Processual e Judiciária (CPC, Arts. 6º e 67 a 69)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-medidas-executivas-atipicas-art-139-iv-do-cpc-e-a-adi-5941-do-stf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Medidas Executivas Atípicas (Art. 139, IV, do CPC) e a ADI 5941 do STF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Medidas Executivas Atípicas (Art. 139, IV, do CPC) e a ADI 5941 do STF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-papel-decisivo-do-osint-na-concessao-das-medidas-atipicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Papel Decisivo do OSINT na Concessão das Medidas Atípicas:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-stj-resp-1774913sp-producao-antecipada-de-provas-digitais-e-autonomia-probatoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: STJ REsp 1.774.913/SP — Produção Antecipada de Provas Digitais e Autonomia Probatória
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-stf-adi-5941df-ativacao-de-sistemas-conveniados-e-medidas-executivas-atipicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: STF ADI 5941/DF — Ativação de Sistemas Conveniados e Medidas Executivas Atípicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medida-judicial-a-penhora-de-faturamento-de-filiais-cpc-art-866" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ Medida Judicial: A Penhora de Faturamento de Filiais (CPC, Art. 866)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-o-principio-da-menor-onerosidade-art-805-do-cpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: O Princípio da Menor Onerosidade (Art. 805 do CPC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivo-do-sisbajud-infrutifero-a-penhora-de-maquininhas-de-cartao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔎 Pivô: Do SISBAJUD Infrutífero à Penhora de Maquininhas de Cartão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 5 - Casos e Exercícios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte 5 - Casos e Exercícios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_23_estudos_de_caso_guiados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 23 - Estudos de Caso Guiados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parte_5_casos_praticos_e_caderno_exercicios/cap_24_laboratorio_integrado_simulacao_contraditorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap. 24 - Simulação em Contraditório
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos Práticos Forenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos Práticos Forenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_01_devedor_nao_localizado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 01 - Localização de Devedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_02_devedor_aparentemente_insolvente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 02 - Insolvência e Blindagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_03_execucao_alimentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 03 - Alimentos e Sinais de Riqueza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_04_perfil_anonimo_redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 04 - Perfil Anônimo em Redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_05_publicacao_apagada_preservacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 05 - Publicação Apagada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_06_empresa_suspeita_societario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 06 - Empresa Suspeita / Noteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../casos_praticos/caso_07_caso_integrado_completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso 07 - Desafio Integrado Multivetorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Base Dinâmica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/catalogo_ferramentas_portais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Portais e Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base_dinamica/checklist_verificacao_links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist Trimestral de Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset OSINT Brazuca
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dataset OSINT Brazuca
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/mapeamento_fontes_brazuca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento de Fontes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../osint_brazuca_dataset/protocolo_validacao_fontes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo de Admissão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curso de 72h
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curso de 72h
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curso/banco_questoes_e_jurisprudencia_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Banco de Questões Comentadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governança e ADRs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governança e ADRs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/0001-separacao-ebook-perene-e-base-dinamica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0001 - Livro Perene vs Base Dinâmica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-ponto-de-saturacao-da-investigacao-em-fontes-abertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. O Ponto de Saturação da Investigação em Fontes Abertas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-producao-antecipada-de-provas-art-381-do-cpc-e-a-preservacao-de-evidencias-digitais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Produção Antecipada de Provas (Art. 381 do CPC) e a Preservação de Evidências Digitais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Produção Antecipada de Provas (Art. 381 do CPC) e a Preservação de Evidências Digitais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-autonomia-do-direito-a-prova-e-a-vedacao-de-valoracao-de-merito-no-stj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Autonomia do Direito à Prova e a Vedação de Valoração de Mérito no STJ:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tutela-cautelar-antecedente-arts-300-e-305-do-cpc-arresto-e-busca-e-apreensao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Tutela Cautelar Antecedente (Arts. 300 e 305 do CPC): Arresto e Busca e Apreensão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tutela Cautelar Antecedente (Arts. 300 e 305 do CPC): Arresto e Busca e Apreensão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-requisitos-indissociaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Requisitos Indissociáveis:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-medidas-cautelares-assecuratorias-tipicas-e-atipicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Medidas Cautelares Assecuratórias Típicas e Atípicas:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-dinamica-procedimental-da-tutela-antecedente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Dinâmica Procedimental da Tutela Antecedente:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sistemas-restritos-do-judiciario-e-o-principio-da-cooperacao-processual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sistemas Restritos do Judiciário e o Princípio da Cooperação Processual
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sistemas Restritos do Judiciário e o Princípio da Cooperação Processual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-sniper-sistema-nacional-de-investigacao-patrimonial-e-recuperacao-de-ativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. SNIPER (Sistema Nacional de Investigação Patrimonial e Recuperação de Ativos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-sisbajud-e-o-modulo-de-repeticao-programada-teimosinha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. SISBAJUD e o Módulo de Repetição Programada ("Teimosinha")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-infojud-e-a-declaracao-de-operacoes-imobiliarias-doi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. INFOJUD e a Declaração de Operações Imobiliárias (DOI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-renajud-restricoes-veiculares-graduadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. RENAJUD: Restrições Veiculares Graduadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-censec-central-notarial-de-servicos-eletronicos-compartilhados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. CENSEC (Central Notarial de Serviços Eletrônicos Compartilhados)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-serasajud-negativacao-coercitiva-nos-biros-de-credito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. SERASAJUD: Negativação Coercitiva nos Birôs de Crédito
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-o-dever-de-cooperacao-processual-e-judiciaria-cpc-arts-6o-e-67-a-69" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. O Dever de Cooperação Processual e Judiciária (CPC, Arts. 6º e 67 a 69)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-medidas-executivas-atipicas-art-139-iv-do-cpc-e-a-adi-5941-do-stf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Medidas Executivas Atípicas (Art. 139, IV, do CPC) e a ADI 5941 do STF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Medidas Executivas Atípicas (Art. 139, IV, do CPC) e a ADI 5941 do STF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-papel-decisivo-do-osint-na-concessao-das-medidas-atipicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Papel Decisivo do OSINT na Concessão das Medidas Atípicas:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Boxes Metodológicos e Jurisprudência Aplicada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Boxes Metodológicos e Jurisprudência Aplicada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-stj-resp-1774913sp-producao-antecipada-de-provas-digitais-e-autonomia-probatoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: STJ REsp 1.774.913/SP — Produção Antecipada de Provas Digitais e Autonomia Probatória
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validade-juridica-e-jurisprudencia-stf-adi-5941df-ativacao-de-sistemas-conveniados-e-medidas-executivas-atipicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Validade Jurídica e Jurisprudência: STF ADI 5941/DF — Ativação de Sistemas Conveniados e Medidas Executivas Atípicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medida-judicial-a-penhora-de-faturamento-de-filiais-cpc-art-866" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ Medida Judicial: A Penhora de Faturamento de Filiais (CPC, Art. 866)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-juridico-o-principio-da-menor-onerosidade-art-805-do-cpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Limite Jurídico: O Princípio da Menor Onerosidade (Art. 805 do CPC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivo-do-sisbajud-infrutifero-a-penhora-de-maquininhas-de-cartao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔎 Pivô: Do SISBAJUD Infrutífero à Penhora de Maquininhas de Cartão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="capitulo-22-quando-o-osint-nao-basta-o-ponto-de-transicao-para-medidas-judiciais-tipicas-e-atipicas">Capítulo 22: Quando o OSINT Não Basta: O Ponto de Transição para Medidas Judiciais Típicas e Atípicas<a class="headerlink" href="#capitulo-22-quando-o-osint-nao-basta-o-ponto-de-transicao-para-medidas-judiciais-tipicas-e-atipicas" title="Permanent link">&para;</a></h1>
+<h2 id="1-o-ponto-de-saturacao-da-investigacao-em-fontes-abertas">1. O Ponto de Saturação da Investigação em Fontes Abertas<a class="headerlink" href="#1-o-ponto-de-saturacao-da-investigacao-em-fontes-abertas" title="Permanent link">&para;</a></h2>
+<p>Nenhum método investigativo é onipotente. A inteligência em fontes abertas possui limites jurídicos intransponíveis fixados pela Constituição Federal de 1988: o postulado da <strong>reserva de jurisdição</strong> reserva com exclusividade ao Poder Judiciário a competência para afastar o sigilo bancário (LC 105/2001), o sigilo fiscal (CTN, art. 198) e a quebra de dados telemáticos e telefônicos (CF, art. 5º, XII).</p>
+<p>O advogado experiente não perde tempo tentando "hackear" contas bancárias ou contratar serviços clandestinos de interceptação. Ele reconhece com exatidão <strong>o ponto de saturação do OSINT</strong>: o momento em que a pesquisa em fontes abertas reuniu indícios suficientes para conferir plausibilidade jurídica (<em>fumus boni iuris</em>) ao pedido de providência judicial coercitiva.</p>
+<p>O OSINT, portanto, não substitui o juiz; ele <strong>qualifica, fundamenta e direciona o pedido judicial</strong>, impedindo que a pretensão seja rechaçada como genérica ou desproporcional.</p>
+<hr />
+<h2 id="2-producao-antecipada-de-provas-art-381-do-cpc-e-a-preservacao-de-evidencias-digitais">2. Produção Antecipada de Provas (Art. 381 do CPC) e a Preservação de Evidências Digitais<a class="headerlink" href="#2-producao-antecipada-de-provas-art-381-do-cpc-e-a-preservacao-de-evidencias-digitais" title="Permanent link">&para;</a></h2>
+<p>Quando os indícios coligidos em fontes abertas apontam para a iminência de dissipação de registros eletrônicos ou quando a complexidade fática recomenda apuração pericial antes do litígio, a <strong>Ação de Produção Antecipada de Provas</strong> (CPC, arts. 381 a 383) constitui o instrumento processual mais potente e célere à disposição da advocacia.</p>
+<p>O CPC de 2015 desvinculou a produção antecipada do caráter exclusivamente cautelar-urgente do direito revogado, consagrando o <strong>direito autônomo à prova</strong> sob três hipóteses independentes:</p>
+<ol>
+<li><strong>Inciso I (Perecimento Probatório e Volatilidade Extrema)</strong>: Quando <em>haja fundado receio de que venha a tornar-se impossível ou muito difícil a verificação de certos fatos na pendência da ação</em>. No ambiente digital, aplica-se à iminente exclusão de dados em servidores em nuvem, expiração do prazo de guarda obrigatória de logs de 6 meses do Marco Civil da Internet (Lei nº 12.965/2014, art. 15), cancelamento de contas corporativas fraudulentas ou reformatação deliberada de estações de trabalho e dispositivos móveis por fraudadores e operadores de esquemas ilegais;</li>
+<li><strong>Inciso II (Viabilização da Autocomposição)</strong>: Quando <em>a prova a ser produzida seja suscetível de viabilizar a autocomposição ou outro meio adequado de solução de conflito</em>. Ao fixar com rigor pericial a autoria de ilícito cibernético, a existência de patrimônio dissimulado ou o passivo oculto de uma sociedade, a prova pericial antecipada constrange as partes a uma transação amigável prévia, mitigando o custo financeiro e temporal de demandas judiciais prolongadas;</li>
+<li><strong>Inciso III (Prevenção de Demandas Temerárias e Justificação Fática)</strong>: Quando <em>o prévio conhecimento dos fatos possa justificar ou evitar o ajuizamento de ação</em>. A produção antecipada resguarda o autor contra o risco de condenação por litigância de má-fé ou sucumbência expressiva em ações indenizatórias ou executivas de grande vulto, permitindo constatar preventivamente se determinado alvo identificado em OSINT atuou efetivamente como operador financeiro da fraude.</li>
+</ol>
+<h3 id="a-autonomia-do-direito-a-prova-e-a-vedacao-de-valoracao-de-merito-no-stj">A Autonomia do Direito à Prova e a Vedação de Valoração de Mérito no STJ:<a class="headerlink" href="#a-autonomia-do-direito-a-prova-e-a-vedacao-de-valoracao-de-merito-no-stj" title="Permanent link">&para;</a></h3>
+<p>A Terceira Turma do Superior Tribunal de Justiça, no julgamento histórico do <strong>REsp 1.774.913/SP (Rel. Min. Nancy Andrighi)</strong>, assentou que na ação probatória autônoma descabe ao magistrado formular qualquer juízo prévio de valor quanto à ocorrência material do fato alegado ou pronunciar-se sobre suas consequências jurídicas. O papel jurisdicional limita-se a assegurar a higidez técnica da colheita, o contraditório formal e a higidez da cadeia de custódia (CPP, art. 158-A e CPC, arts. 369 e 411), sendo a valoração reservada com exclusividade ao juiz da futura ação de mérito.</p>
+<hr />
+<h2 id="3-tutela-cautelar-antecedente-arts-300-e-305-do-cpc-arresto-e-busca-e-apreensao">3. Tutela Cautelar Antecedente (Arts. 300 e 305 do CPC): Arresto e Busca e Apreensão<a class="headerlink" href="#3-tutela-cautelar-antecedente-arts-300-e-305-do-cpc-arresto-e-busca-e-apreensao" title="Permanent link">&para;</a></h2>
+<p>Quando a investigação OSINT revela perigo concreto de dano iminente ou risco ao resultado útil da demanda, a via da tutela de urgência cautelar requerida em caráter antecedente (CPC, arts. 300 e 305) viabiliza medidas constritivas fulminantes antes mesmo da citação do devedor (<em>inaudita altera parte</em>):</p>
+<h3 id="31-requisitos-indissociaveis">3.1. Requisitos Indissociáveis:<a class="headerlink" href="#31-requisitos-indissociaveis" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><em>Fumus Boni Iuris</em> (Probabilidade do Direito)</strong>: Não se confunde com mera alegação retórica. É respaldado pelo relatório de inteligência forense instruído com dados brutos certificados, certidões públicas de juntas comerciais, registros imobiliários e evidências preservadas com carimbo de tempo e hash criptográfico;</li>
+<li><strong><em>Periculum in Mora</em> (Perigo de Dano ou Risco ao Resultado Útil)</strong>: Caracterizado pela constatação empírica de dilapidação acelerada de patrimônio, desmobilização de galpões operacionais, transferência de veículos de luxo para interpostas pessoas, remessa atípica de fundos ao exterior ou indícios de destruição física de acervos documentais e digitais.</li>
+</ul>
+<h3 id="32-medidas-cautelares-assecuratorias-tipicas-e-atipicas">3.2. Medidas Cautelares Assecuratórias Típicas e Atípicas:<a class="headerlink" href="#32-medidas-cautelares-assecuratorias-tipicas-e-atipicas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Arresto Cautelar de Ativos e Recebíveis (CPC, art. 301)</strong>: Apreensão judicial preventiva de bens móveis, saldos bancários, recebíveis futuros de adquirentes de cartão de crédito e cotas societárias para garantir a satisfação de futura execução por quantia certa, obstando a consolidação da insolvência fraudulenta;</li>
+<li><strong>Busca e Apreensão de Documentos Contábeis e Dispositivos Eletrônicos (CPC, art. 301)</strong>: Mandado cumprido por oficial de justiça acompanhado de perito forense computacional para apreensão física de computadores, servidores locais, discos rígidos (<em>hard disks</em>), smartphones funcionais e livros fiscais. A concessão liminar <em>inaudita altera parte</em> é crucial para impedir que o fraudador, ao tomar ciência da demanda, acione rotinas de destruição remota de dados (<em>remote wipe</em>), criptografia irreversível de pastas ou fragmentação física de mídias magnéticas.</li>
+</ul>
+<h3 id="33-dinamica-procedimental-da-tutela-antecedente">3.3. Dinâmica Procedimental da Tutela Antecedente:<a class="headerlink" href="#33-dinamica-procedimental-da-tutela-antecedente" title="Permanent link">&para;</a></h3>
+<p>De acordo com o rito do art. 305 do CPC, efetivada a medida cautelar de constrição ou apreensão, o réu será citado para contestar em 5 dias. O autor deverá aditar a petição para formular o <strong>pedido principal no prazo decadencial de 30 dias</strong> (CPC, art. 308), sob pena de cessação imediata da eficácia da medida protetiva (art. 309, I).</p>
+<hr />
+<h2 id="4-sistemas-restritos-do-judiciario-e-o-principio-da-cooperacao-processual">4. Sistemas Restritos do Judiciário e o Princípio da Cooperação Processual<a class="headerlink" href="#4-sistemas-restritos-do-judiciario-e-o-principio-da-cooperacao-processual" title="Permanent link">&para;</a></h2>
+<p>A transição entre a inteligência em fontes abertas e as ferramentas estatais coercitivas opera-se pela ativação articulada dos sistemas conveniados mantidos pelo Conselho Nacional de Justiça (CNJ) e tribunais superiores:</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Indícios de Blindagem e Ocultação Coligidos em OSINT] --&gt; B[Requerimento de Cooperação Judicial Coercitiva]
+    B --&gt; C[SNIPER: Grafo Integrado de Ativos e Relações do CNJ]
+    B --&gt; D[SISBAJUD: Bloqueio Bancário e Módulo 'Teimosinha' 30 Dias]
+    B --&gt; E[INFOJUD: Declarações IRPF/DIRPJ e DOI Imobiliária]
+    B --&gt; F[RENAJUD: Restrição Veicular - Transferência, Licenciamento e Circulação]
+    B --&gt; G[CENSEC: Escrituras, Partilhas CESDI, Testamentos RCTO e Procurações CEP]
+    B --&gt; H[SERASAJUD: Negativação Célere nos Birôs de Crédito]</code></pre>
+<h3 id="41-sniper-sistema-nacional-de-investigacao-patrimonial-e-recuperacao-de-ativos">4.1. SNIPER (Sistema Nacional de Investigação Patrimonial e Recuperação de Ativos)<a class="headerlink" href="#41-sniper-sistema-nacional-de-investigacao-patrimonial-e-recuperacao-de-ativos" title="Permanent link">&para;</a></h3>
+<p>Desenvolvido sob a governança do Programa Justiça 4.0 do CNJ, o <strong>SNIPER</strong> representa o salto tecnológico mais avançado da investigação patrimonial judicial. Em segundos, a ferramenta realiza varredura cruzada automatizada entre diversas bases governamentais e de registros:
+- <strong>Bases Integradas</strong>: Receita Federal do Brasil (quadros societários, filiais, histórico cadastral), Tribunal Superior Eleitoral (bens declarados em candidaturas), Registro Aeronáutico Brasileiro da ANAC (propriedade e operação de aeronaves civis), Tribunal Marítimo (embarcações náuticas registradas) e cadastros de sanções e condenações por improbidade administrativa (CEIS e CNEP);
+- <strong>Grafo Relacional Interativo</strong>: Gera diagramas relacionais intuitivos de vínculos entre pessoas físicas e jurídicas, revelando sócios ocultos, empresas coligadas, laranjas com participações cruzadas e patrimônio móvel e aéreo de alto valor registrado em nome de pessoas jurídicas de fachada.</p>
+<h3 id="42-sisbajud-e-o-modulo-de-repeticao-programada-teimosinha">4.2. SISBAJUD e o Módulo de Repetição Programada ("Teimosinha")<a class="headerlink" href="#42-sisbajud-e-o-modulo-de-repeticao-programada-teimosinha" title="Permanent link">&para;</a></h3>
+<p>O Sistema de Busca de Ativos do Poder Judiciário conecta as varas judiciais a todas as instituições financeiras, cooperativas de crédito, corretoras de valores (DTVMs) e instituições de pagamento (fintechs) reguladas pelo Banco Central do Brasil:
+- <strong>Ordem Pontual vs. "Teimosinha"</strong>: O bloqueio pontual vigora apenas durante a grade horária bancária do dia do protocolo. Devedores habituais esvaziam contas diariamente via transferências automáticas ou Pix programado. O credor deve requerer expressamente o acionamento do <strong>módulo de reiteração automática ("Teimosinha")</strong>, que mantém a ordem de varredura ativa por <strong>30 dias ininterruptos</strong>, capturando qualquer recurso que transite pelas contas e aplicações do devedor;
+- <strong>Abrangência de Investimentos e Fundos</strong>: O sistema alcança saldos de depósitos à vista e poupança, cotas de fundos de investimento abertos e fechados, títulos públicos e privados de renda fixa (CDB, LCI, LCA, debêntures) e custódia de ações depositadas em corretoras de valores mobiliários.</p>
+<h3 id="43-infojud-e-a-declaracao-de-operacoes-imobiliarias-doi">4.3. INFOJUD e a Declaração de Operações Imobiliárias (DOI)<a class="headerlink" href="#43-infojud-e-a-declaracao-de-operacoes-imobiliarias-doi" title="Permanent link">&para;</a></h3>
+<p>A consulta ao sistema INFOJUD possibilita o acesso sigiloso às últimas 5 declarações fiscais do devedor (IRPF para pessoas físicas e DIRPJ/ECF para pessoas jurídicas), evidenciando mutações patrimoniais abruptas e participações societárias declaradas. O elemento mais precioso, contudo, é a <strong>Declaração de Operações Imobiliárias (DOI)</strong>:
+- Por força de lei, os Cartórios de Notas e Registro de Imóveis de todo o território nacional são obrigados a comunicar à Receita Federal todas as operações de alienação, compra e venda ou doação de imóveis formalizadas por escritura pública;
+- Permite identificar imóveis de elevado valor adquiridos pelo devedor que jamais foram levados a registro no Registro Geral de Imóveis (RGI) competente — manobra rotineira para ocultar o domínio formal e evitar averbação de penhoras.</p>
+<h3 id="44-renajud-restricoes-veiculares-graduadas">4.4. RENAJUD: Restrições Veiculares Graduadas<a class="headerlink" href="#44-renajud-restricoes-veiculares-graduadas" title="Permanent link">&para;</a></h3>
+<p>O convênio eletrônico interliga o Judiciário ao Registro Nacional de Veículos Automotores (RENAVAM / SENATRAN), permitindo a consulta em tempo real da frota registrada em nome do devedor e a inserção imediata de gravames judiciais graduados:
+1. <strong>Restrição de Transferência</strong>: Impede a alienação registral do veículo a terceiros;
+2. <strong>Restrição de Licenciamento</strong>: Impede a emissão do Certificado de Registro e Licenciamento de Veículo (CRLV), obstando sua regularidade administrativa;
+3. <strong>Restrição de Circulação (Penhora e Apreensão)</strong>: Bloqueia a circulação viária do bem em âmbito nacional, autorizando as autoridades policiais e agentes de trânsito a recolherem o automóvel ao pátio público imediatamente quando interceptado em fiscalizações de trânsito ou radares inteligentes.</p>
+<h3 id="45-censec-central-notarial-de-servicos-eletronicos-compartilhados">4.5. CENSEC (Central Notarial de Serviços Eletrônicos Compartilhados)<a class="headerlink" href="#45-censec-central-notarial-de-servicos-eletronicos-compartilhados" title="Permanent link">&para;</a></h3>
+<p>Instituída pelo Conselho Nacional de Justiça por meio do Provimento CNJ nº 18/2012 e regulamentada pelo Provimento CNJ nº 100/2020, a <strong>CENSEC</strong> é administrada pelo Colégio Notarial do Brasil (CNB-CF) e reúne os atos notariais lavrados em todos os tabelionatos de notas do território nacional. A consulta judicial aos módulos da CENSEC é decisiva para desarticular fraudes familiares e interposição de pessoas:
+- <strong>CESDI (Central de Escrituras de Separações, Divórcios e Inventários)</strong>: Permite localizar partilhas amigáveis, doações graciosas e renúncias transativas de herança lavradas por escritura pública em prol de familiares para esvaziar a meação ou o patrimônio do devedor;
+- <strong>RCTO (Registro Central de Testamentos On-Line)</strong>: Identifica disposições testamentárias de última vontade e concessão de legados vinculados ao investigado;
+- <strong>CEP (Central de Escrituras e Procurações)</strong>: O módulo mais estratégico para investigações de blindagem. Permite rastrear todas as procurações públicas outorgadas ou substabelecidas pelo devedor ou a ele destinadas. É o instrumento forense definitivo para demonstrar que o devedor, embora formalmente destituído de bens, atua como procurador com amplos poderes de gestão, movimentação bancária e alienação patrimonial irrestrita das contas e bens de empresas titularizadas por laranjas (genitores idosos ou empregados subordinados).</p>
+<h3 id="46-serasajud-negativacao-coercitiva-nos-biros-de-credito">4.6. SERASAJUD: Negativação Coercitiva nos Birôs de Crédito<a class="headerlink" href="#46-serasajud-negativacao-coercitiva-nos-biros-de-credito" title="Permanent link">&para;</a></h3>
+<p>O sistema SERASAJUD conecta os juízos cíveis e trabalhistas diretamente à Serasa Experian, permitindo a inscrição automatizada do nome do devedor no rol de inadimplentes (CPC, art. 782, § 3º), bem como o cancelamento da restrição mediante quitação ou acordo. Essa medida retira a capacidade de crédito do executado no mercado e complementa a pressão psicológica legítima de cobrança.</p>
+<h3 id="47-o-dever-de-cooperacao-processual-e-judiciaria-cpc-arts-6o-e-67-a-69">4.7. O Dever de Cooperação Processual e Judiciária (CPC, Arts. 6º e 67 a 69)<a class="headerlink" href="#47-o-dever-de-cooperacao-processual-e-judiciaria-cpc-arts-6o-e-67-a-69" title="Permanent link">&para;</a></h3>
+<p>Uma das maiores resistências enfrentadas pelo advogado na fase de execução é o despacho judicial padronizado indeferindo a consulta aos sistemas conveniados sob o argumento de que "cabe ao credor diligenciar em busca de bens penhoráveis".</p>
+<p>Essa postura judicial é manifestamente superada à luz do ordenamento processual vigente:
+- <strong>O Princípio da Cooperação (CPC, art. 6º)</strong>: Todos os sujeitos do processo devem cooperar entre si para que se obtenha, em tempo razoável, decisão de mérito justa e efetiva. O magistrado não é um espectador inerte, incumbindo-lhe empregar os meios estatais exclusivos colocados à sua disposição para conferir efetividade à tutela executiva (CF, art. 5º, LXXVIII e CPC, art. 4º);
+- <strong>A Cooperação Judiciária Nacional (CPC, arts. 67 a 69)</strong>: Os órgãos jurisdicionais têm o dever funcional de prestar auxílio mútuo e intercâmbio de informações e dados cadastrais. A consulta ao SNIPER, SISBAJUD, CENSEC e INFOJUD não constitui prerrogativa arbitrária ou favor concedido pelo juízo, mas imperativo da função jurisdicional executiva, máxime quando o credor instrui seu requerimento com relatório investigativo de fontes abertas demonstrando o esgotamento dos meios ordinários e os indícios convergentes de ocultação patrimonial.</p>
+<hr />
+<h2 id="5-medidas-executivas-atipicas-art-139-iv-do-cpc-e-a-adi-5941-do-stf">5. Medidas Executivas Atípicas (Art. 139, IV, do CPC) e a ADI 5941 do STF<a class="headerlink" href="#5-medidas-executivas-atipicas-art-139-iv-do-cpc-e-a-adi-5941-do-stf" title="Permanent link">&para;</a></h2>
+<p>O art. 139, IV, do CPC confere ao magistrado o poder de:</p>
+<blockquote>
+<p><em>"Determinar todas as medidas indutivas, coercitivas, mandamentais ou sub-rogatórias necessárias para assegurar a efetivação da decisão judicial, inclusive nas ações que tenham por objeto prestação pecuniária."</em></p>
+</blockquote>
+<p>No julgamento histórico da <strong>ADI nº 5941 (Rel. Min. Luiz Fux, Redator do acórdão Min. Edson Fachin)</strong>, o Plenário do Supremo Tribunal Federal declarou a <strong>constitucionalidade das medidas executivas atípicas</strong>, tais como:
+1. <strong>Apreensão e Retenção do Passaporte</strong>: Restrição do direito de deixar o território nacional;
+2. <strong>Suspensão da Carteira Nacional de Habilitação (CNH)</strong>: Proibição de conduzir veículos automotores;
+3. <strong>Cancelamento e Bloqueio de Cartões de Crédito</strong>: Restrição de linhas de financiamento de consumo pessoal;
+4. <strong>Proibição de Participação em Licitações Públicas e Concursos</strong>: Restrição negocial de contratação com o poder público.</p>
+<h3 id="o-papel-decisivo-do-osint-na-concessao-das-medidas-atipicas">O Papel Decisivo do OSINT na Concessão das Medidas Atípicas:<a class="headerlink" href="#o-papel-decisivo-do-osint-na-concessao-das-medidas-atipicas" title="Permanent link">&para;</a></h3>
+<p>O STF fixou balizas constitucionais vinculantes para a imposição de medidas atípicas:
+- <strong>Subsidiariedade e Esgotamento Prévio</strong>: Prévia tentativa frustrada de satisfação da dívida pelos meios executivos típicos (bloqueio bancário ordinário e localização de imóveis ou veículos);
+- <strong>Adequação, Necessidade e Proporcionalidade</strong>: A providência deve demonstrar aptidão coercitiva para compelir o devedor a indicar bens, sem vulnerar o núcleo essencial da dignidade da pessoa humana (ex.: resguardo da CNH para motoristas profissionais ou sustento familiar);
+- <strong>Fundamentação Concreta e Sinais Exteriores de Riqueza Oculta</strong>: Rechaça-se a aplicação automática de medidas atípicas por mero inadimplemento. A decisão judicial deve estar estritamente respaldada em elementos empíricos dos autos.</p>
+<p>É exatamente aqui que o relatório investigativo OSINT se torna indispensável:
+- Se o credor postula a apreensão do passaporte de forma genérica, o juiz indefere com fulcro na ausência de fundamentação;
+- Se o credor apresenta <strong>relatório forense em fontes abertas instruído com evidências documentais (EVD-001 a EVD-004) comprovando que o executado viajou 4 vezes para o exterior nos últimos 12 meses ostentando voos em classe executiva e hospedagens de alto luxo enquanto alega insolvência em juízo</strong>, o magistrado defere de imediato a retenção do passaporte e da CNH com esteio no art. 139, IV, do CPC e na ADI 5941 do STF.</p>
+<hr />
+<h2 id="6-boxes-metodologicos-e-jurisprudencia-aplicada">6. Boxes Metodológicos e Jurisprudência Aplicada<a class="headerlink" href="#6-boxes-metodologicos-e-jurisprudencia-aplicada" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-stj-resp-1774913sp-producao-antecipada-de-provas-digitais-e-autonomia-probatoria">⚖️ Validade Jurídica e Jurisprudência: STJ REsp 1.774.913/SP — Produção Antecipada de Provas Digitais e Autonomia Probatória<a class="headerlink" href="#validade-juridica-e-jurisprudencia-stj-resp-1774913sp-producao-antecipada-de-provas-digitais-e-autonomia-probatoria" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Superior Tribunal de Justiça (STJ) - 3ª Turma
+- <strong>Recurso</strong>: REsp 1.774.913/SP
+- <strong>Relatora</strong>: Ministra Nancy Andrighi
+- <strong>Data de Julgamento</strong>: 15/10/2019 | Publicação no DJe: 18/10/2019
+- <strong>Tese Fixada / Ementa Síntese</strong>:</p>
+<blockquote>
+<p><em>"O CPC/2015 consagrou a autonomia do direito à prova, permitindo o ajuizamento de ação de produção antecipada com base nos incisos do art. 381, despida do requisito da urgência e sem qualquer vinculação obrigatória a uma futura ação principal. No procedimento da produção antecipada de provas, o juiz não se pronuncia sobre a ocorrência ou a inocorrência do fato, tampouco sobre suas consequências jurídicas, limitando-se a assegurar o contraditório e a higidez técnica da prova a ser colhida."</em></p>
+</blockquote>
+<p><strong>Modelo de Parágrafo para Petição (Ação Autônoma de Produção Antecipada de Provas Digitais):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>"Com fulcro no art. 381, incisos I e III, do Código de Processo Civil, c/c o art. 15 da Lei nº 12.965/2014 (Marco Civil da Internet) e em estrita consonância com a tese firmada pela 3ª Turma do Superior Tribunal de Justiça no REsp 1.774.913/SP (Rel. Min. Nancy Andrighi), ajuíza-se a presente Ação de Produção Antecipada de Provas em face do provedor de aplicação réu. Conforme demonstrado no Relatório de Inteligência Forense acostado aos autos e corroborado pelas evidências digitais preservadas (EVD-001 a EVD-004), o perfil difamatório e as páginas virtuais apócrifas sob escrutínio exibem extrema volatilidade cibernética, existindo fundado receio de exclusão deliberada de dados e perecimento probatório pelo transcurso do prazo legal semestral de guarda de logs telemáticos. Destarte, com a finalidade de resguardar os elementos fáticos essenciais e conferir higidez à cadeia de custódia para justificar e aparelhar a futura ação indenizatória de mérito, requer-se: (i) a intimação liminar da requerida para depósito judicial de todos os registros de acesso à aplicação, IPs e portas lógicas de origem; e (ii) a realização de perícia técnica digital para validação e extração forense dos dados sob contraditório, abstendo-se este d. Juízo de qualquer exame valorativo sobre o mérito material da contenda."
+</code></pre></div></p>
+<p>[!NOTE]</p>
+<h3 id="validade-juridica-e-jurisprudencia-stf-adi-5941df-ativacao-de-sistemas-conveniados-e-medidas-executivas-atipicas">⚖️ Validade Jurídica e Jurisprudência: STF ADI 5941/DF — Ativação de Sistemas Conveniados e Medidas Executivas Atípicas<a class="headerlink" href="#validade-juridica-e-jurisprudencia-stf-adi-5941df-ativacao-de-sistemas-conveniados-e-medidas-executivas-atipicas" title="Permanent link">&para;</a></h3>
+<p><strong>Ficha Técnica do Precedente:</strong>
+- <strong>Tribunal</strong>: Supremo Tribunal Federal (STF) - Tribunal Pleno
+- <strong>Ação</strong>: Ação Direta de Inconstitucionalidade (ADI) 5941/DF
+- <strong>Relator Originário</strong>: Ministro Luiz Fux | Redator p/ Acórdão: Ministro Edson Fachin
+- <strong>Data de Julgamento</strong>: 09/02/2023 | Publicação no DJe: 11/05/2023
+- <strong>Tese Fixada</strong>:</p>
+<blockquote>
+<p><em>"É constitucional o art. 139, IV, do Código de Processo Civil, que autoriza o juiz a adotar medidas executivas atípicas indutivas, coercitivas, mandamentais ou sub-rogatórias necessárias para assegurar a efetivação das decisões judiciais, inclusive nas obrigações pecuniárias, desde que observados os direitos fundamentais do devedor, a proporcionalidade, a razoabilidade, o contraditório e o prévio esgotamento dos meios típicos de execução, vedada a imposição de medidas coercitivas desprovidas de fundamentação concreta."</em></p>
+</blockquote>
+<p><strong>Modelo de Parágrafo para Petição (Ativação de Sistemas Integrados SNIPER/CENSEC e Medidas Atípicas Subsidiárias):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"Diante da frustração reiterada das vias executivas tradicionais e em face dos contundentes indícios de ocultação dolosa coligidos no Relatório Investigativo OSINT em anexo (EVD-001 a EVD-004) — o qual evidenciou que o devedor usufrui cotidianamente de veículos e imóveis formalmente titularizados por interposta pessoa jurídica —, requer-se, com esteio no dever de cooperação processual (CPC, arts. 6º e 67 a 69): (i) a ativação imediata do Sistema Nacional de Investigação Patrimonial e Recuperação de Ativos (SNIPER) do Conselho Nacional de Justiça, visando ao mapeamento do grafo relacional de participações societárias cruzadas, aeronaves (RAB/ANAC) e embarcações do devedor e coligadas; (ii) a reiteração automática de bloqueio bancário via SISBAJUD ('Teimosinha') pelo período ininterrupto de 30 dias; (iii) a consulta aos módulos CEP e CESDI do sistema CENSEC para identificação de procurações com amplos poderes e escrituras de partilha simuladas; e (iv) na hipótese de manutenção da inadimplência voluntária após a consolidação das buscas, a decretação subsidiária das medidas executivas atípicas do art. 139, IV, do CPC, consistentes na suspensão da CNH e retenção do passaporte do executado, providências expressamente chanceladas pelo Plenário do Supremo Tribunal Federal no julgamento vinculante da ADI 5941/DF."
+</code></pre></div></p>
+<p>[!IMPORTANT]</p>
+<h3 id="medida-judicial-a-penhora-de-faturamento-de-filiais-cpc-art-866">🏛️ Medida Judicial: A Penhora de Faturamento de Filiais (CPC, Art. 866)<a class="headerlink" href="#medida-judicial-a-penhora-de-faturamento-de-filiais-cpc-art-866" title="Permanent link">&para;</a></h3>
+<p>Quando o devedor não possui saldo em dinheiro, mas mantém estabelecimentos comerciais em funcionamento com grande fluxo diário de clientes (supermercados, restaurantes, clínicas), requeira ao juízo a <strong>penhora sobre percentual do faturamento diário da empresa</strong> (geralmente entre 5% e 15%), com a nomeação de administrador-depositário judicial para recolhimento semanal dos valores em conta vinculada ao processo.</p>
+<p>[!WARNING]</p>
+<h3 id="limite-juridico-o-principio-da-menor-onerosidade-art-805-do-cpc">⚖️ Limite Jurídico: O Princípio da Menor Onerosidade (Art. 805 do CPC)<a class="headerlink" href="#limite-juridico-o-principio-da-menor-onerosidade-art-805-do-cpc" title="Permanent link">&para;</a></h3>
+<p>Toda execução processa-se no interesse do credor, mas deve observar a menor onerosidade possível para o devedor. Medidas coercitivas atípicas não podem servir como mero instrumento de punição ou humilhação pública. O advogado deve demonstrar que as medidas ordinárias de penhora foram esgotadas e que o devedor adota comportamento deliberado de esquiva e blindagem.</p>
+<p>[!TIP]</p>
+<h3 id="pivo-do-sisbajud-infrutifero-a-penhora-de-maquininhas-de-cartao">🔎 Pivô: Do SISBAJUD Infrutífero à Penhora de Maquininhas de Cartão<a class="headerlink" href="#pivo-do-sisbajud-infrutifero-a-penhora-de-maquininhas-de-cartao" title="Permanent link">&para;</a></h3>
+<p>Quando as contas correntes bancárias do devedor retornam zeradas no SISBAJUD, investigue nos estabelecimentos físicos e virtuais do alvo quais credenciadoras de cartão de crédito e terminais POS ele utiliza (Cielo, Rede, Stone, PagBank). Requeira ao juízo <strong>expedição de ofício diretamente às empresas adquirentes e subadquirentes para penhora na fonte dos recebíveis futuros de vendas no cartão de crédito</strong>.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
