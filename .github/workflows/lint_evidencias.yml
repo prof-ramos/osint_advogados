@@ -1,0 +1,37 @@
+name: Lint de Evidências Digitais
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-evidencias:
+    name: Validação de Evidências Forenses
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validar Integridade Forense em Casos Práticos
+        run: python3 scripts/lint_evidencias.py --path casos_praticos
+
+      - name: Validar Integridade Forense no Livro
+        run: python3 scripts/lint_evidencias.py --path livro

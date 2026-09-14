@@ -7,6 +7,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Redundant agent mirrors (canonical skills source is .agents/skills/)
+# Redundant agent mirrors and scratch directories (canonical skills source is .agents/skills/)
 .claude/
 agent/
+.agents/*
+!.agents/skills/
+
