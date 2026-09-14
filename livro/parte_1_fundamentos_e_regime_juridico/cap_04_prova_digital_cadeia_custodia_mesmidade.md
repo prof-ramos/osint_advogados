@@ -55,13 +55,20 @@ Com o advento da Lei nº 13.964/2019 (Pacote Anticrime), o Código de Processo P
 
 ## 5. Jurisprudência Consolidada do STJ e o Movimento Regulatório do CNJ
 
-### 5.1. A Invalidade dos Prints de WhatsApp Desprovidos de Integridade
+### 5.1. A Invalidade dos Prints de WhatsApp Desprovidos de Integridade e a Falha na Extração Forense
 O STJ pacificou o entendimento de que capturas de tela do WhatsApp Web, desacompanhadas da extração forense da base de dados do aparelho ou de ata notarial que comprove a continuidade e integralidade das mensagens, não constituem meio de prova idôneo para condenação penal ou medidas cíveis gravosas:
 > *"As mensagens enviadas por meio do aplicativo WhatsApp Web admitem a possibilidade de exclusão unilateral de mensagens, bem como de adulteração do teor das conversas sem deixar vestígios visíveis na tela. Imprescindível a realização de exame pericial idôneo ou observância estrita da cadeia de custódia para conferir credibilidade ao material."* (STJ, 5ª Turma, AgRg no RHC 143.169/RJ; 6ª Turma, RHC 99.735/SC).
 
-### 5.2. O Princípio *Pas de Nullité Sans Grief* (Art. 563 do CPP)
+Esse rigor foi aprofundado pelo STJ no **Informativo 811** (AgRg no HC 828.054/RN, Rel. Min. Joel Ilan Paciornik, Quinta Turma, julgado em 23/04/2024), que assentou a **inadmissibilidade de prova digital quando a extração é realizada por mero "print screen" sem código hash**, mesmo após falha na extração por ferramentas especializadas (como o *software* Cellebrite):
+> *"A falta de procedimentos para garantir a idoneidade e integridade dos dados extraídos de aparelho celular apreendido resulta na quebra da cadeia de custódia e na inadmissibilidade da prova digital. (...) No caso concreto, o perito informou que a extração foi realizada mediante simples captura de tela ('print screen') ante a incapacidade dos extratores forenses. Ausente o código hash e a garantia de integridade, anulam-se a prova digital e todas as medidas cautelares e buscas e apreensões dela derivadas."* (STJ, 5ª Turma, AgRg no HC 828.054/RN, DJe 03/05/2024).
+
+Por outro lado, o STJ estabeleceu importante contraponto fático no julgamento do **EDcl no HC 945.157/SC** (5ª Turma, Rel. Min. Daniela Teixeira, j. 04/11/2024): capturas de tela colhidas no aparelho diretamente pela vítima ou seus familiares, por meio das funções nativas do aplicativo, não configuram violação automática da cadeia de custódia quando inexiste indício de adulteração e as mensagens são corroboradas pelo depoimento das partes em contraditório.
+
+### 5.2. O Princípio *Pas de Nullité Sans Grief* (Art. 563 do CPP) e a Valoração Epistemológica
 Ao analisar vícios formais na cadeia de custódia, o STJ fixou que a suposta quebra das formalidades do art. 158-A não acarreta nulidade automática absoluta da prova:
-> *"Eventual irregularidade no cumprimento das formalidades da cadeia de custódia não conduz, de plano, à ilicitude ou inadmissibilidade da prova, competindo à parte que suscita a nulidade demonstrar o efetivo prejuízo e elementos concretos que coloquem em dúvida a idoneidade e integridade do vestígio recolhido."* (STJ, 6ª Turma, HC 703.978/SC).
+> *"Eventual irregularidade no cumprimento das formalidades da cadeia de custódia não conduz, de plano, à ilicitude ou inadmissibilidade da prova, competindo à parte que suscita a nulidade demonstrar o efetivo prejuízo e elementos concretos que coloquem em dúvida a idoneidade e integridade do vestígio recolhido."* (STJ, 6ª Turma, HC 703.978/SC; HC 653.515/RJ, Info 720).
+
+Como leciona Geraldo Prado, a quebra da cadeia de custódia quebra a presunção de mesmidade e aciona o *princípio da desconfiança*: o elemento de prova não pode ser admitido a priori, cabendo ao magistrado um dever reforçado de motivação caso decida admitir dado desprovido de rastreabilidade documentada.
 
 ### 5.3. A Portaria CNJ nº 391/2025 no Contexto da Governança Forense
 A Portaria nº 391/2025 do Conselho Nacional de Justiça instaurou Grupo de Trabalho especializado destinado a padronizar as diretrizes técnicas e operacionais para a custódia, armazenamento e valoração da prova digital no Poder Judiciário. 
@@ -72,6 +79,14 @@ A Portaria nº 391/2025 do Conselho Nacional de Justiça instaurou Grupo de Trab
 ---
 
 ## 6. Boxes Didáticos do Capítulo
+
+> [!NOTE]
+> ### ⚖️ Validade Jurídica e Jurisprudência: Inadmissibilidade de Print Screen sem Hash e Quebra de Custódia (Info 811 STJ)
+> - **Tribunal**: Superior Tribunal de Justiça (STJ).
+> - **Julgado**: AgRg no HC 828.054/RN, Rel. Min. Joel Ilan Paciornik, 5ª Turma, julgado em 23/04/2024, DJe 03/05/2024 (Informativo nº 811).
+> - **Tese Fixada**: A ausência de procedimentos formais que assegurem a idoneidade, autenticidade e integridade dos dados extraídos de dispositivo telemático — como o cálculo e conferência de algoritmo de dispersão unidirecional (hash) e documentação de manuseio pericial — enseja a inadmissibilidade da prova digital obtida por simples captura de tela (*print screen*), operando efeito contaminação sobre quaisquer diligências ou medidas constritivas dela dependentes.
+> - **Modelo de Parágrafo para Petição (Impugnação de Prova Digital Unilateral)**:
+>   > *"Consoante pacificado pelo Superior Tribunal de Justiça no julgamento do AgRg no HC 828.054/RN (Informativo nº 811), é juridicamente imprestável e inadmissível a prova digital carreada aos autos consistente em meras capturas de tela desacompanhadas de metadados, relatório circunstanciado de extração e código de verificação criptográfica (hash SHA-256). A ausência de garantia matemática de integridade impede a verificação do princípio da mesmidade e viola o regime cogente da cadeia de custódia (CPP, arts. 158-A a 158-F c/c CPC, arts. 369 e 422), impondo-se o desentranhamento do material e o reconhecimento da nulidade de todos os atos subsequentes que dele decorreram."*
 
 > [!NOTE]
 > ### 📦 Preservação: Como Calcular Hash SHA-256 no Terminal

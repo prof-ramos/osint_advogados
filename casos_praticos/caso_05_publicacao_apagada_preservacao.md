@@ -50,8 +50,8 @@
 
 | Data/Hora (UTC-3) | Procedimento Técnico Executado | Ferramenta Utilizada | Arquivo Gerado / Hash SHA-256 |
 | :--- | :--- | :--- | :--- |
-| 14/05/2025 19:22 | Captura do código-fonte completo e elementos gráficos integrados. | Extensão SingleFile (Chromium). | `linkedin_post_gustavo_silva_20250514.html`<br>`Hash: 4a2b9f81c7e...3d91` |
-| 14/05/2025 19:24 | Gravação de tráfego de rede e resposta do servidor remoto da Microsoft/LinkedIn. | DevTools do Navegador (Network Export HAR). | `linkedin_network_traffic_20250514.har`<br>`Hash: 8f10c32d4b...9a12` |
+| 14/05/2025 19:22 | Captura do código-fonte completo e elementos gráficos integrados. | Extensão SingleFile (Chromium). | `linkedin_post_gustavo_silva_20250514.html`<br>`Hash: 10b9798bae81cb179b9cbf2237a77e10996d3911bd669247e4b934410c7bdac0` |
+| 14/05/2025 19:24 | Gravação de tráfego de rede e resposta do servidor remoto da Microsoft/LinkedIn. | DevTools do Navegador (Network Export HAR). | `linkedin_network_traffic_20250514.har`<br>`Hash: ec67bac0cdcd2ace70b73c72c68f168853a3a1bff23bae2af42f16bce843b576` |
 | 14/05/2025 19:28 | Requisição de arquivamento no Archive.today. | API / Web Form do Archive.ph | Snapshot permanente gravado na URL: `https://archive.ph/2025.05.14-222815/https://www.linkedin.com/posts/...` |
 | 14/05/2025 19:35 | Registro de carimbo de tempo com protocolo de auditoria. | Plataforma de Registro Criptográfico com Carimbo ICP-Brasil. | Certificado Técnico de Preservação nº 2025-BR-9912. |
 
