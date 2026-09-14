@@ -173,14 +173,21 @@ def format_markdown_section(title: str, paragraphs: list[str]) -> str:
 
 
 def main():
-    base_path = "/tmp/belisa_eval/03_organizado_por_materia"
+    import argparse
+    parser = argparse.ArgumentParser(description="Extrai seletivamente dados do acervo Belisário para OSINT Jurídico")
+    parser.add_argument("--input-dir", default="/tmp/belisa_eval/03_organizado_por_materia", help="Diretório base do acervo descompactado")
+    parser.add_argument("--output-file", default="curso/banco_questoes_e_jurisprudencia_osint.md", help="Arquivo de destino")
+    args = parser.parse_args()
+
+    base_path = args.input_dir
     if not os.path.exists(base_path):
-        print(f"Diretório {base_path} não encontrado!")
+        print(f"Aviso: Diretório de entrada '{base_path}' não encontrado. Caso deseje reextrair, certifique-se de que os arquivos estejam no caminho indicado.")
         return
 
-    output_dir = "curso"
-    os.makedirs(output_dir, exist_ok=True)
-    output_file = os.path.join(output_dir, "banco_questoes_e_jurisprudencia_osint.md")
+    output_file = args.output_file
+    output_dir = os.path.dirname(output_file)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     content = [
         "# Banco Didático de Questões e Jurisprudência Aplicada ao OSINT Jurídico",

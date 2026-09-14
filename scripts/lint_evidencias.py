@@ -11,24 +11,34 @@ Verifica:
 
 import argparse
 import glob
+import json
 import os
 import re
 import sys
+from typing import Any, Dict, List
 
-EMPTY_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-EVD_ID_STRICT_PATTERN = re.compile(r"^EVD-\d{3}$")
-EVD_ID_ANY_PATTERN = re.compile(r"\b(?:EVD|evd)-[\w-]+\b")
-HASH_SHA256_EXTRACT = re.compile(r"(?:SHA-256|Hash):\s*`?([a-zA-Z0-9._…-]+)`?", re.IGNORECASE)
-TIMEZONE_PATTERN = re.compile(r"(BRT|UTC(?:[+-]\d{1,2})?|GMT|Z|[+-]\d{2}:?\d{2})", re.IGNORECASE)
-FILE_EXT_PATTERN = re.compile(r"`[^`]+\.(pdf|png|jpe?g|mp4|html|warc|txt|json|csv|zip|eml|har|pcap|log)`", re.IGNORECASE)
+EMPTY_SHA256: str = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+EVD_ID_STRICT_PATTERN: re.Pattern = re.compile(r"^EVD-\d{3}$")
+EVD_ID_ANY_PATTERN: re.Pattern = re.compile(r"\b(?:EVD|evd)-[\w-]+\b")
+HASH_SHA256_EXTRACT: re.Pattern = re.compile(
+    r"(?:SHA-256|Hash):\s*`?([a-zA-Z0-9._…-]+)`?", re.IGNORECASE
+)
+TIMEZONE_PATTERN: re.Pattern = re.compile(
+    r"(BRT|UTC(?:[+-]\d{1,2})?|GMT|Z|[+-]\d{2}:?\d{2})", re.IGNORECASE
+)
+FILE_EXT_PATTERN: re.Pattern = re.compile(
+    r"`[^`]+\.(pdf|png|jpe?g|mp4|html|warc|txt|json|csv|zip|eml|har|pcap|log)`",
+    re.IGNORECASE,
+)
 
 
-def check_file(file_path: str) -> list[dict]:
+def check_file(file_path: str) -> List[Dict[str, Any]]:
+    """Analisa um arquivo markdown e retorna uma lista de infrações forenses."""
     # Arquivos normativos que documentam proibições e citam exemplos proibidos
     if os.path.basename(file_path) in ("CODING_STANDARDS.md", "AGENTS.md"):
         return []
 
-    issues = []
+    issues: List[Dict[str, Any]] = []
     with open(file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
@@ -41,7 +51,10 @@ def check_file(file_path: str) -> list[dict]:
                     "file": file_path,
                     "line": line_num,
                     "type": "ID_FORMAT_ERROR",
-                    "detail": f"Identificador de evidência '{evd_id}' fora do padrão de 3 dígitos (deve ser EVD-\\d{{3}}, ex: EVD-001)."
+                    "detail": (
+                        f"Identificador de evidência '{evd_id}' fora do padrão de 3 dígitos "
+                        "(deve ser EVD-\\d{3}, ex: EVD-001)."
+                    ),
                 })
 
         # 2. Checagem de Hashes SHA-256
@@ -53,21 +66,21 @@ def check_file(file_path: str) -> list[dict]:
                     "file": file_path,
                     "line": line_num,
                     "type": "TRUNCATED_HASH",
-                    "detail": f"Hash SHA-256 truncado encontrado: '{clean_hash}'. É proibido usar reticências."
+                    "detail": f"Hash SHA-256 truncado encontrado: '{clean_hash}'. É proibido usar reticências.",
                 })
             elif len(clean_hash) != 64 or not all(c in "0123456789abcdefABCDEF" for c in clean_hash):
                 issues.append({
                     "file": file_path,
                     "line": line_num,
                     "type": "INVALID_SHA256_FORMAT",
-                    "detail": f"Hash SHA-256 com tamanho ou caracteres inválidos ({len(clean_hash)} chars): '{clean_hash}'."
+                    "detail": f"Hash SHA-256 com tamanho ou caracteres inválidos ({len(clean_hash)} chars): '{clean_hash}'.",
                 })
             elif clean_hash.lower() == EMPTY_SHA256:
                 issues.append({
                     "file": file_path,
                     "line": line_num,
                     "type": "EMPTY_STRING_HASH",
-                    "detail": "Hash SHA-256 corresponde à string vazia (e3b0c442...855). Deve refletir um arquivo real."
+                    "detail": "Hash SHA-256 corresponde à string vazia (e3b0c442...855). Deve refletir um arquivo real.",
                 })
 
         # 3. Se for uma linha de tabela de evidência horizontal (contém ID EVD e múltiplas colunas)
@@ -78,7 +91,7 @@ def check_file(file_path: str) -> list[dict]:
                     "file": file_path,
                     "line": line_num,
                     "type": "MISSING_TIMEZONE",
-                    "detail": "Carimbo de data/hora na matriz de evidências sem indicação explícita de fuso horário (ex: BRT, UTC-3)."
+                    "detail": "Carimbo de data/hora na matriz de evidências sem indicação explícita de fuso horário (ex: BRT, UTC-3).",
                 })
             # Checar menção a arquivo preservado
             if "Arquivo" in line and not FILE_EXT_PATTERN.search(line):
@@ -86,25 +99,31 @@ def check_file(file_path: str) -> list[dict]:
                     "file": file_path,
                     "line": line_num,
                     "type": "MISSING_FILE_EXTENSION",
-                    "detail": "Arquivo na coluna de preservação sem extensão explícita entre crases (ex: `arquivo.pdf`)."
+                    "detail": "Arquivo na coluna de preservação sem extensão explícita entre crases (ex: `arquivo.pdf`).",
                 })
-        elif ("Data / Hora" in line or "Data/Hora" in line) and not line.strip().startswith("| ID") and not "| :---" in line:
+        elif (
+            ("Data / Hora" in line or "Data/Hora" in line)
+            and not line.strip().startswith("| ID")
+            and not "| :---" in line
+        ):
             # Em tabelas verticais com valor de data real (ex: 2026- ou DD/MM/AAAA)
             if re.search(r"\b\d{4}[-/]\d{2}[-/]\d{2}\b|\b\d{2}/\d{2}/\d{4}\b", line) and not TIMEZONE_PATTERN.search(line):
                 issues.append({
                     "file": file_path,
                     "line": line_num,
                     "type": "MISSING_TIMEZONE",
-                    "detail": "Carimbo de data/hora sem indicação explícita de fuso horário (ex: BRT, UTC-3, ISO offset)."
+                    "detail": "Carimbo de data/hora sem indicação explícita de fuso horário (ex: BRT, UTC-3, ISO offset).",
                 })
 
     return issues
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Linter de Evidências Digitais e Cadeia de Custódia")
     parser.add_argument("--path", default="casos_praticos", help="Diretório ou arquivo a ser analisado")
     parser.add_argument("--strict", action="store_true", default=True, help="Retorna código de saída 1 em caso de erro")
+    parser.add_argument("--format", choices=["text", "json"], default="text", help="Formato de saída dos resultados")
+    parser.add_argument("--quiet", action="store_true", help="Modo silencioso (apenas código de saída)")
     args = parser.parse_args()
 
     target_path = args.path
@@ -113,30 +132,47 @@ def main():
     elif os.path.isdir(target_path):
         files = sorted(glob.glob(os.path.join(target_path, "**", "*.md"), recursive=True))
     else:
-        print(f"Erro: Caminho '{target_path}' não encontrado.")
+        if not args.quiet:
+            print(f"Erro: Caminho '{target_path}' não encontrado.", file=sys.stderr)
         sys.exit(2)
 
+    all_results: Dict[str, List[Dict[str, Any]]] = {}
     total_issues = 0
     files_with_issues = 0
 
-    print(f"=== Linter de Evidências Digitais OSINT ===")
-    print(f"Examinando {len(files)} arquivo(s) em '{target_path}'...\n")
+    if not args.quiet and args.format == "text":
+        print("=== Linter de Evidências Digitais OSINT ===")
+        print(f"Examinando {len(files)} arquivo(s) em '{target_path}'...\n")
 
     for fpath in files:
         issues = check_file(fpath)
         if issues:
+            all_results[fpath] = issues
             files_with_issues += 1
             total_issues += len(issues)
-            print(f"❌ {fpath} ({len(issues)} problema(s)):")
-            for issue in issues:
-                print(f"   [L{issue['line']}] [{issue['type']}] {issue['detail']}")
-            print()
+            if not args.quiet and args.format == "text":
+                print(f"❌ {fpath} ({len(issues)} problema(s)):")
+                for issue in issues:
+                    print(f"   [L{issue['line']}] [{issue['type']}] {issue['detail']}")
+                print()
+
+    if args.format == "json":
+        output_data = {
+            "target": target_path,
+            "total_files": len(files),
+            "files_with_issues": files_with_issues,
+            "total_issues": total_issues,
+            "issues": all_results,
+        }
+        print(json.dumps(output_data, indent=2, ensure_ascii=False))
 
     if total_issues == 0:
-        print(f"✅ Sucesso! Todos os {len(files)} arquivo(s) passaram nas verificações de integridade de evidência.")
+        if not args.quiet and args.format == "text":
+            print(f"✅ Sucesso! Todos os {len(files)} arquivo(s) passaram nas verificações de integridade de evidência.")
         sys.exit(0)
     else:
-        print(f"⚠️ Foram encontrados {total_issues} problema(s) em {files_with_issues} arquivo(s).")
+        if not args.quiet and args.format == "text":
+            print(f"⚠️ Foram encontrados {total_issues} problema(s) em {files_with_issues} arquivo(s).")
         if args.strict:
             sys.exit(1)
 
